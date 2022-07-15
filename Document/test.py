@@ -1,2 +1,10 @@
-s_1, s_2 = map(input().split())
-print(s_2)
+x, y = 5, 4
+a, b, c = [], [], []
+for i in range(x):
+    a.append(i)
+    for j in range(y):
+        b.append(j)
+        c.append(i)
+print(a)
+print(b)
+print(c)

@@ -16,7 +16,7 @@ def order(sentence):
     for number in numbers:
         str_number = str(number)
         for word in words:
-            if str_number in word:      # поиск str_number в word
+            if str_number in word:  # поиск str_number в word
                 result.append(word)
     return ' '.join(result)
 
