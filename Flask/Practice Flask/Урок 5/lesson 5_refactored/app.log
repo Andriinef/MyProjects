@@ -1,0 +1,19 @@
+2022-07-14 13:20:35,614 [INFO] - CbrApi:Started update for: 840=>643
+2022-07-14 13:20:35,615 [DEBUG] - CbrApi:rate before: XRate(840=>643): 1.0
+2022-07-14 13:20:40,608 [INFO] - TestApi:Started update for: 840=>980
+2022-07-14 13:20:40,609 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-14 13:20:40,614 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-14 13:20:40,615 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-14 13:20:40,639 [INFO] - PrivatApi:Started update for: 840=>980
+2022-07-14 13:20:40,640 [DEBUG] - PrivatApi:rate before: XRate(840=>980): 1.0
+2022-07-14 13:20:41,073 [DEBUG] - PrivatApi:Privat response: [{'ccy': 'USD', 'base_ccy': 'UAH', 'buy': '36.49630', 'sale': '36.49635'}, {'ccy': 'EUR', 'base_ccy': 'UAH', 'buy': '36.62990', 'sale': '36.63004'}, {'ccy': 'RUR', 'base_ccy': 'UAH', 'buy': '0.32000', 'sale': '0.35001'}, {'ccy': 'BTC', 'base_ccy': 'USD', 'buy': '18791.8812', 'sale': '20769.9740'}]
+2022-07-14 13:20:41,080 [DEBUG] - PrivatApi:rate after: XRate(840=>980): 36.49635
+2022-07-14 13:20:41,080 [INFO] - PrivatApi:Finished update for: 840=>980
+2022-07-14 14:10:26,612 [INFO] - TestApi:Started update for: 840=>980
+2022-07-14 14:10:26,613 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-14 14:10:26,617 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-14 14:10:26,617 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-14 14:12:05,339 [INFO] - TestApi:Started update for: 840=>980
+2022-07-14 14:12:05,340 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-14 14:12:05,344 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-14 14:12:05,344 [INFO] - TestApi:Finished update for: 840=>980

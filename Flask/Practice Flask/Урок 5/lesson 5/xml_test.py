@@ -5,12 +5,12 @@ import xmltodict
 xml_example = """<employees>
     <person ID="1234567">
         <name>
-            <first>Kseniia</first>
-            <last>Krementar</last>
+            <first>Andrii</first>
+            <last>Nefodov</last>
         </name>
         <address>
-            <city>Kiev</city>
-            <district>Obolon</district>
+            <city>Kharkov</city>
+            <district>Nemyshlyansky</district>
         </address>
     </person>
 

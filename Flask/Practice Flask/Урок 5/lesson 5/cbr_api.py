@@ -29,7 +29,7 @@ def update_xrates(from_currency, to_currency):
 
 
 def get_cbr_rate(from_currency):
-    response = requests.get("http://www.cbr.ru/scripts/XML_daily.asp")
+    response = requests.get("https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
     log.debug("response.encoding: %s" % response.encoding)
     response_text = response.text
     log.debug("response.text: %s" % response_text)

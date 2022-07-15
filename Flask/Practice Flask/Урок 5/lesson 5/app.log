@@ -1,0 +1,14 @@
+2022-07-14 12:29:55,313 [INFO] - CbrApi:Started update for: 840=>643
+2022-07-14 12:29:55,315 [DEBUG] - CbrApi:rate before: XRate(840=>643): 1.0
+2022-07-14 12:33:38,840 [INFO] - CbrApi:Started update for: 840=>643
+2022-07-14 12:33:38,841 [DEBUG] - CbrApi:rate before: XRate(840=>643): 1.0
+2022-07-14 12:33:49,058 [INFO] - TestApi:Started update for: 840=>980
+2022-07-14 12:33:49,059 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-14 12:33:49,066 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-14 12:33:49,066 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-14 12:33:49,091 [INFO] - PrivatApi:Started update for: 840=>980
+2022-07-14 12:33:49,092 [DEBUG] - PrivatApi:rate before: XRate(840=>980): 1.0
+2022-07-14 14:11:44,827 [INFO] - CbrApi:Started update for: 840=>643
+2022-07-14 14:11:44,828 [DEBUG] - CbrApi:rate before: XRate(840=>643): 1.0
+2022-07-14 14:11:45,929 [DEBUG] - CbrApi:response.encoding: UTF-8
+2022-07-14 14:11:45,929 [DEBUG] - CbrApi:response.text: [{"ccy":"USD","base_ccy":"UAH","buy":"36.49630","sale":"36.49635"},{"ccy":"EUR","base_ccy":"UAH","buy":"36.62990","sale":"36.63004"},{"ccy":"RUR","base_ccy":"UAH","buy":"0.32000","sale":"0.35001"},{"ccy":"BTC","base_ccy":"USD","buy":"18769.2344","sale":"20744.9432"}]
