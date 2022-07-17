@@ -1,4 +1,4 @@
-x, y = 5, 4
+x, y, r = 5, 4, 6
 a, b, c = [], [], []
 for i in range(x):
     a.append(i)
