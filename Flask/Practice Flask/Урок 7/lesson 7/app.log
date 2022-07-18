@@ -162,3 +162,147 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.privatbank.ua'
 2022-07-15 13:07:42,585 [DEBUG] - PrivatApi:Privat response: [{'ccy': 'USD', 'base_ccy': 'UAH', 'buy': '36.36350', 'sale': '36.36364'}, {'ccy': 'EUR', 'base_ccy': 'UAH', 'buy': '36.36350', 'sale': '36.36364'}, {'ccy': 'RUR', 'base_ccy': 'UAH', 'buy': '0.32000', 'sale': '0.35001'}, {'ccy': 'BTC', 'base_ccy': 'USD', 'buy': '19838.6005', 'sale': '21926.8743'}]
 2022-07-15 13:07:42,589 [DEBUG] - PrivatApi:rate after: XRate(840=>980): 36.36364
 2022-07-15 13:07:42,589 [INFO] - PrivatApi:Finished update for: XRate(840=>980): 36.36364
+2022-07-15 21:28:37,779 [INFO] - TestApi:Started update for: 840=>980
+2022-07-15 21:28:37,781 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-15 21:28:37,786 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-15 21:28:37,786 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-15 21:28:54,751 [INFO] - CbrApi:Started update for: XRate(840=>643): 1.0
+2022-07-15 21:28:54,751 [DEBUG] - CbrApi:rate before: XRate(840=>643): 1.0
+2022-07-15 21:29:04,761 [ERROR] - CbrApi:Error during request sending
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fd79ef62b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.cbr.ru', port=80): Max retries exceeded with url: /scripts/XML_daily.asp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd79ef62b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 7/lesson 7/api/__init__.py", line 46, in _send_request
+    response = self._send(method=method, url=url, headers=headers, data=data)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 7/lesson 7/api/__init__.py", line 60, in _send
+    return requests.request(method=method, url=url, headers=headers, data=data, timeout=HTTP_TIMEOUT)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.cbr.ru', port=80): Max retries exceeded with url: /scripts/XML_daily.asp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd79ef62b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2022-07-15 21:29:04,836 [INFO] - TestApi:Started update for: 840=>980
+2022-07-15 21:29:04,836 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-15 21:29:04,840 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-15 21:29:04,840 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-15 21:33:13,208 [INFO] - CbrApi:Started update for: XRate(840=>643): 1.0
+2022-07-15 21:33:13,208 [DEBUG] - CbrApi:rate before: XRate(840=>643): 1.0
+2022-07-15 21:33:23,222 [ERROR] - CbrApi:Error during request sending
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 665, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fca14618b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 719, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.cbr.ru', port=80): Max retries exceeded with url: /scripts/XML_daily.asp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca14618b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 7/lesson 7/api/__init__.py", line 46, in _send_request
+    response = self._send(method=method, url=url, headers=headers, data=data)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 7/lesson 7/api/__init__.py", line 60, in _send
+    return requests.request(method=method, url=url, headers=headers, data=data, timeout=HTTP_TIMEOUT)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.cbr.ru', port=80): Max retries exceeded with url: /scripts/XML_daily.asp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fca14618b50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2022-07-15 21:33:23,293 [INFO] - TestApi:Started update for: 840=>980
+2022-07-15 21:33:23,294 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-15 21:33:23,298 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-15 21:33:23,298 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-15 21:35:56,083 [INFO] - TestApi:Started update for: 840=>980
+2022-07-15 21:35:56,084 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-15 21:35:56,088 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-15 21:35:56,089 [INFO] - TestApi:Finished update for: 840=>980
+2022-07-15 21:37:41,029 [INFO] - TestApi:Started update for: 840=>980
+2022-07-15 21:37:41,030 [DEBUG] - TestApi:rate before: XRate(840=>980): 1.0
+2022-07-15 21:37:41,035 [DEBUG] - TestApi:rate after: XRate(840=>980): 1.01
+2022-07-15 21:37:41,035 [INFO] - TestApi:Finished update for: 840=>980
