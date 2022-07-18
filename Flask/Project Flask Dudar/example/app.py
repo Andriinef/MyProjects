@@ -14,9 +14,7 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/user/<string:name>/<int:id_in>")
-def user(name, id_in):
-    return "Пользователь: " + name + " - " + str(id_in)
+
 
 
 if __name__ == "__main__":
