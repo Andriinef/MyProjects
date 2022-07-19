@@ -82,7 +82,7 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "http://www.cbr.ru/scripts/XML_daily.asp")
+        self.assertEqual(api_log.request_url, "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
         self.assertIsNotNone(api_log.response_text)
         self.assertIn("<NumCode>840</NumCode>", api_log.response_text)
 
@@ -158,7 +158,7 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://api.cryptonator.com/api/ticker/btc-uah")
+        self.assertEqual(api_log.request_url, "https://api.cryptonator.com/api/ticker/btc-usd")
         self.assertIsNotNone(api_log.response_text)
 
         self.assertIn('{"base":"BTC","target":"UAH","price":', api_log.response_text)
