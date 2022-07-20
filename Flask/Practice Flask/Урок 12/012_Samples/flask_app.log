@@ -1,0 +1,78 @@
+2022-07-20 11:50:23,604 [INFO] - app: Started ViewAllRates
+2022-07-20 11:50:26,374 [INFO] - app: Started UpdateRates
+2022-07-20 11:50:29,376 [INFO] - app: Started ViewAllRates
+2022-07-20 11:50:56,032 [INFO] - app: Started UpdateRates
+2022-07-20 11:50:56,646 [ERROR] - app: Error: syntax error: line 1, column 0
+Traceback (most recent call last):
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 18, in call
+    return self._call(*args, **kwds)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 70, in _call
+    self._update_rate(from_currency, to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 77, in _update_rate
+    api.update_rate(from_currency, to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/__init__.py", line 20, in update_rate
+    module.Api().update_rate(xrate)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/__init__.py", line 32, in update_rate
+    xrate.rate = self._update_rate(xrate)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cbr_api.py", line 11, in _update_rate
+    rate = self._get_cbr_rate(xrate.from_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cbr_api.py", line 19, in _get_cbr_rate
+    rate = self._find_rate(response_text, from_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cbr_api.py", line 24, in _find_rate
+    root = ET.fromstring(response_text)
+  File "/usr/lib/python3.8/xml/etree/ElementTree.py", line 1320, in XML
+    parser.feed(text)
+xml.etree.ElementTree.ParseError: syntax error: line 1, column 0
+2022-07-20 11:51:03,267 [INFO] - app: Started UpdateRates
+2022-07-20 11:51:03,693 [ERROR] - app: Error: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 18, in call
+    return self._call(*args, **kwds)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 70, in _call
+    self._update_rate(from_currency, to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 77, in _update_rate
+    api.update_rate(from_currency, to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/__init__.py", line 20, in update_rate
+    module.Api().update_rate(xrate)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/__init__.py", line 32, in update_rate
+    xrate.rate = self._update_rate(xrate)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cryptonator_api.py", line 11, in _update_rate
+    rate = self._get_api_rate(xrate.from_currency, xrate.to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cryptonator_api.py", line 26, in _get_api_rate
+    response_json = response.json()
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 518, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-20 11:51:06,655 [INFO] - app: Started UpdateRates
+2022-07-20 11:51:07,121 [ERROR] - app: Error: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 18, in call
+    return self._call(*args, **kwds)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 70, in _call
+    self._update_rate(from_currency, to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/controllers.py", line 77, in _update_rate
+    api.update_rate(from_currency, to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/__init__.py", line 20, in update_rate
+    module.Api().update_rate(xrate)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/__init__.py", line 32, in update_rate
+    xrate.rate = self._update_rate(xrate)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cryptonator_api.py", line 11, in _update_rate
+    rate = self._get_api_rate(xrate.from_currency, xrate.to_currency)
+  File "/home/andrii/MyProjects/Flask/Practice Flask/Урок 12/012_Samples/api/cryptonator_api.py", line 26, in _get_api_rate
+    response_json = response.json()
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 518, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-07-20 11:52:57,318 [INFO] - app: Started ViewAllRates
