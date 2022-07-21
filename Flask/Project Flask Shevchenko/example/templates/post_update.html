@@ -1,20 +1,33 @@
-{% extends "base.html" %}
-
-{% block title %}
-Обновление статьи
-{% endblock%}
-
-{% block body %}
+{% extends "base.html" %} {% block title %} Обновление статьи {% endblock%} {%
+block body %}
 <div class="container mt-5">
-    <h1>Обновление статьи</h1>
-    <form method="post">
-        <input type="text" name="title" id="title" class="col-lg-12 col-md-8 mx-auto" value="{{ article.title }}" placeholder="Введите название"><br>
-        <textarea name="intro" id="intro" class="col-lg-12 col-md-8 mx-auto" placeholder="Введите анонс">{{ article.intro }}</textarea><br>
-        <textarea name="text" id="text" class="col-lg-12 col-md-8 mx-auto" placeholder="Введите основной текст">{{ article.text }}</textarea><br>
-        <input type="submit" class="btn btn-success" value="Обновить">
-    </form>
+  <h1>Обновление статьи</h1>
+  <form method="post">
+    <input
+      type="text"
+      name="title"
+      id="title"
+      class="col-lg-12 col-md-8 mx-auto"
+      value="{{ article.title }}"
+      placeholder="Введите название"
+    /><br />
+    <textarea
+      name="intro"
+      id="intro"
+      class="col-lg-12 col-md-8 mx-auto"
+      placeholder="Введите анонс"
+    >
+{{ article.intro }}</textarea
+    ><br />
+    <textarea
+      name="text"
+      id="text"
+      class="col-lg-12 col-md-8 mx-auto"
+      placeholder="Введите основной текст"
+    >
+{{ article.text }}</textarea
+    ><br />
+    <input type="submit" class="btn btn-success" value="Обновить" />
+  </form>
 </div>
 {% endblock %}
-
-
-
