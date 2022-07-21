@@ -20,7 +20,7 @@ class Gun(Sprite):
     def output(self):
         """рисование пушки"""
         self.screen.blit(self.image, self.rect)
-    
+
     def update_gun(self):
         """обновление позиции пушки"""
         if self.mright and self.rect.right < self.screen_rect.right:
