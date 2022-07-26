@@ -6,6 +6,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # подключаемся к 8888 порту
 sock.connect(('', 8888))
 # отпарлвяем сообщение
-sock.send(b'Test message')
+sock.send(b'A_Draft message')
 # закрываем сокет-соединение
 sock.close()

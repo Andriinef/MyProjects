@@ -18,7 +18,7 @@ with open('data/output.csv', 'w') as f:
     # с данными, что является более интуитивно, нежели просто плоский список
     writer.writerow({
         'first_name': 'Ivan',
-        'last_name': 'Petrov @ ll, Test',
+        'last_name': 'Petrov @ ll, A_Draft',
         'age': 20
     })
     writer.writerow({

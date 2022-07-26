@@ -242,14 +242,14 @@ Storage.execute_sql(Country._metadata.generate_create_table_sql())
 # executing select/insert/delete
 user = User.storage.insert(
     first_name='John',
-    last_name='Test',
+    last_name='A_Draft',
     age=10
 )
 print('ID', user.id)
 
 user = User.storage.insert(
     first_name='John',
-    last_name='Test',
+    last_name='A_Draft',
     age=10
 )
 print('ID', user.id)

@@ -128,7 +128,7 @@ class UserTestCase(unittest.TestCase):
 
         # мы также можем присвоить экземпляр исключение, чтобы оно было
         # выбрашено в момент вызова
-        raise_text = 'Test exception'
+        raise_text = 'A_Draft exception'
         mocked_sum.side_effect = ValueError(raise_text)
         with self.assertRaises(ValueError):
             sum_two_values(10, 30)

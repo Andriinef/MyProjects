@@ -37,8 +37,8 @@ class TestFilms:
     def test_create_film_with_db(self):
         client = app.test_client()
         data = {
-            'title': 'Test Title',
-            'distributed_by': 'Test Company',
+            'title': 'A_Draft Title',
+            'distributed_by': 'A_Draft Company',
             'release_date': '2010-04-01',
             'description': '',
             'length': 100,
@@ -46,7 +46,7 @@ class TestFilms:
         }
         resp = client.post('/films', data=json.dumps(data), content_type='application/json')
         assert resp.status_code == http.HTTPStatus.CREATED
-        assert resp.json['title'] == 'Test Title'
+        assert resp.json['title'] == 'A_Draft Title'
         self.uuid.append(resp.json['uuid'])
 
     def test_create_film_with_mock_db(self):
@@ -54,8 +54,8 @@ class TestFilms:
                 patch('src.db.session.commit', autospec=True) as mock_session_commit:
             client = app.test_client()
             data = {
-                'title': 'Test Title',
-                'distributed_by': 'Test Company',
+                'title': 'A_Draft Title',
+                'distributed_by': 'A_Draft Company',
                 'release_date': '2010-04-01',
                 'description': '',
                 'length': 100,

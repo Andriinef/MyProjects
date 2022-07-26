@@ -14,5 +14,5 @@ def executor(value1: str, value2: int, callback: Callable[[str, int], None]):
     callback(value1, value2)
 
 
-executor("Test string", 10, handler)
-executor("Test string", 10, incorrect_handler)
+executor("A_Draft string", 10, handler)
+executor("A_Draft string", 10, incorrect_handler)

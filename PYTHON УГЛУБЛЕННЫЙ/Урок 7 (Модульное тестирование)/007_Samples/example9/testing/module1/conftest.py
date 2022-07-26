@@ -14,6 +14,6 @@ def pytest_runtest_setup(item):
 def post(user):
     return Post(
         user=user,
-        comment='Test Comment',
+        comment='A_Draft Comment',
         fixture=True
     )

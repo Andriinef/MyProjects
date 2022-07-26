@@ -5,7 +5,7 @@ import unittest.mock
 
 class UserTestCase(unittest.TestCase):
 
-    @unittest.skip('Test Skip')
+    @unittest.skip('A_Draft Skip')
     def test_just_skip(self):
         self.fail('Does not run')
 

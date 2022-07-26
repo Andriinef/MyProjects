@@ -42,7 +42,7 @@ bases = (
 User = type('User', bases, attrs)
 
 # вызываем конструктор, который у нас описан функцией `init` выше
-user1 = User('John', 'Test', 'Te100vi4')
+user1 = User('John', 'A_Draft', 'Te100vi4')
 
 print(str(user1))
 print(user1.get_first_name())

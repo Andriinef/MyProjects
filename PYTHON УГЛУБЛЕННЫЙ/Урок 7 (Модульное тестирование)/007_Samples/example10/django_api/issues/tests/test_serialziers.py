@@ -10,7 +10,7 @@ class LoginSerializerTestCase(TestCase):
         self.username = 'test'
         self.password = 'pass1234'
         self.user = User.objects.create_user(
-            first_name='Test',
+            first_name='A_Draft',
             last_name='Testovich',
             username=self.username,
             password=self.password,

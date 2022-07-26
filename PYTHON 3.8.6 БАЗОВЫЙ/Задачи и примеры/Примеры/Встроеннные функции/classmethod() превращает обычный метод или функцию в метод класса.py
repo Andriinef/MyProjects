@@ -56,9 +56,9 @@ A.just_func = classmethod(just_func)
 A.just_func()  # <class '__main__.A'>
 # Class Word
 
-just_func("Test")  # Test
+just_func("A_Draft")  # A_Draft
 # Instance Word
 # Class Word
 # <class '__main__.A'>
 # Class Word
-# Test
+# A_Draft
