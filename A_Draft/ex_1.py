@@ -1,5 +1,8 @@
-cities = ["Москва", "Ульяновск", "Самара", "Уфа", "Омск", "Тула"]
-gen = (x for i in range(1000000) for x in cities)
-k = 20
-for i in range(k):
-    print(next(gen), end=' ')
+x = 5
+var = type(x) in (float, int)
+
+var = type(x) is int
+
+isinstance(x, (str, float))
+
+isinstance(x, float)
