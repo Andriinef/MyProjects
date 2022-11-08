@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0db45f516759cc5c835584b95f65011d3e09aa3c60fbe1d03bebc617298302b8"
+            "sha256": "fd319e19bcaf8a3b7d4c3b6ae98f11f5b73ff0790fd3469882793ff20114f239"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -50,6 +50,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==8.1.3"
+        },
+        "codewars-test-teey": {
+            "hashes": [
+                "sha256:2257eaf906c59426e7159241f9cfad3559996da4f20d44e46c2cc32bac0853cb",
+                "sha256:a100cd6c889a6e4df5022be70881efe206a2460f3ff32c889698d7a09b139814"
+            ],
+            "index": "pypi",
+            "version": "==0.1.0"
         },
         "flake8": {
             "hashes": [
