@@ -1,6 +1,6 @@
 from xml.etree import ElementTree as ET
 
-tree = ET.parse('data/test.xml')
+tree = ET.parse("data/test.xml")
 root = tree.getroot()
 
 # search value
@@ -16,13 +16,13 @@ for values in zip(first_names, last_names, ages):
     print(row)
 
 # выборка текста у тега first_name у person с атрибутом pk и индексом 1 в DOM
-last_name = root.find('./person/age/..[@pk][1]/first_name').text
+last_name = root.find("./person/age/..[@pk][1]/first_name").text
 print(last_name)
 
 # выборка текста у тега first_name у person с атрибутом pk и индексом 2 в DOM
-last_name = root.find('./person/age/..[@pk][2]/first_name').text
+last_name = root.find("./person/age/..[@pk][2]/first_name").text
 print(last_name)
 
 # выборка текста у тега first_name у person с атрибутом pk и индексом 3 в DOM
-last_name = root.find('./person/age/..[@pk][3]/first_name').text
+last_name = root.find("./person/age/..[@pk][3]/first_name").text
 print(last_name)

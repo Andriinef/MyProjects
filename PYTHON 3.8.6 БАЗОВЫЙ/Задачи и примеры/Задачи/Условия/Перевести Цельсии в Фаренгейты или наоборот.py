@@ -18,7 +18,7 @@ t = t[0:-1]
 t = int(t)
 
 # Если знак обозначает Цельсии,
-if sign == 'C' or sign == 'c':
+if sign == "C" or sign == "c":
 
     # перевод в Фаренгейты,
     t = t * (9 / 5) + 32
@@ -29,12 +29,12 @@ if sign == 'C' or sign == 'c':
     print()
 
 # Если знак обозначает Фаренгейты,
-elif sign == 'F' or sign == 'f':
+elif sign == "F" or sign == "f":
 
     # перевод в Цельсии,
-    t = (t - 32) * (5/9)
+    t = (t - 32) * (5 / 9)
 
     # округление до целого.
     t = round(t)
 
-    print(str(t) + 'C')
+    print(str(t) + "C")

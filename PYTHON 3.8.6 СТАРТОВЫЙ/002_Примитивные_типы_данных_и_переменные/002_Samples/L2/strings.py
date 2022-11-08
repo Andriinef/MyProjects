@@ -1,10 +1,10 @@
 a = "hello"
-b = 'hello'
-c = '''hello
+b = "hello"
+c = """hello
 world
 and
 hello
-you'''
+you"""
 d = """hello
 world
 and

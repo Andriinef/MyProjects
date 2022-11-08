@@ -7,7 +7,7 @@ a = range(10)
 print(a)
 # Цикл for превращает объект range в итератор
 for i in a:
-    print(i, end=' ')
+    print(i, end=" ")
 
 print("\n------")
 

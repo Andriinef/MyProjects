@@ -2,17 +2,17 @@
 """
 from os.path import getsize
 
-a = '/home/pl/test.html'
-b = '/home/pl/flag.png'
+a = "/home/pl/test.html"
+b = "/home/pl/flag.png"
 
 # возвращает размер (целое число)
 # файла в байтах
 sa = getsize(a)
 sb = getsize(b)
 
-print(sa, 'bytes')
-print(sb, 'bytes')
-print(round(sb / 1024), 'kilobytes')
+print(sa, "bytes")
+print(sb, "bytes")
+print(round(sb / 1024), "kilobytes")
 
 print(sa > sb)
 # 1798 bytes

@@ -4,4 +4,4 @@ import socket
 # создаем UDP socket (IP)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # отправляем сообщение на `localhost:8888`
-sock.sendto(b'A_Draft message', ('localhost', 8888))
+sock.sendto(b"A_Draft message", ("localhost", 8888))

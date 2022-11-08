@@ -1,4 +1,4 @@
-class Stats():
+class Stats:
     """отслеживание статистики"""
 
     def __init__(self):
@@ -10,5 +10,5 @@ class Stats():
 
     def reset_stats(self):
         """статистика, измеряющаяся во время игры"""
-        self.guns_left = 2 #количество жизней gun
+        self.guns_left = 2  # количество жизней gun
         self.score = 0

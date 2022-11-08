@@ -23,4 +23,4 @@ def function(data, new_value):
     return data
 
 
-print(function('{1, 5, 3}', '4'))
+print(function("{1, 5, 3}", "4"))

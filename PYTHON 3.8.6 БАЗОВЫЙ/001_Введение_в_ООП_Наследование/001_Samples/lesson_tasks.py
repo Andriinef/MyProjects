@@ -16,11 +16,11 @@ class Car:
 class Car2(Car):
     @staticmethod
     def turn_left():
-        print('Turn left')
+        print("Turn left")
 
     @staticmethod
     def turn_right():
-        print('Turn right')
+        print("Turn right")
 
 
 # car = Car2('Audi', 'white', 3.5)
@@ -28,6 +28,7 @@ class Car2(Car):
 # car.drive_backward()
 # car.turn_right()
 # car.drive_forward()
+
 
 class Airplane:
     def __init__(self, model):
@@ -48,7 +49,7 @@ class FlyingCar(Car2, Airplane):
         Airplane.__init__(self, model)
 
 
-fc = FlyingCar(brand='Tesla', color='Black', volume=10, model='F')
+fc = FlyingCar(brand="Tesla", color="Black", volume=10, model="F")
 fc.up()
 fc.drive_forward()
 fc.turn_left()

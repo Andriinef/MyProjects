@@ -7,7 +7,7 @@ class Ino(pygame.sprite.Sprite):
 
     def __init__(self, screen):
         """Иницифнизируем и задаем начальную позицию"""
-        super(Ino, self). __init__()
+        super(Ino, self).__init__()
         self.screen = screen
         self.image = pygame.image.load("images/ino.png")
         self.rect = self.image.get_rect()

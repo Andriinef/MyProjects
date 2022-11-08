@@ -3,4 +3,4 @@ class Processor:
         pass
 
     def process(self):
-        print('Process')
+        print("Process")

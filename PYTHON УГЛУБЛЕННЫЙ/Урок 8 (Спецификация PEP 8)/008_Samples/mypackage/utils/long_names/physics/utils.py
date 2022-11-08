@@ -1,4 +1,4 @@
-from .constants import E, PI
+from .constants import PI, E
 
 
 def too_long_foo_function(value):
@@ -6,4 +6,4 @@ def too_long_foo_function(value):
 
 
 def too_long_bar_function(value):
-    return value + PI ** 2
+    return value + PI**2

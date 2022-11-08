@@ -6,7 +6,6 @@ def test_function(value):
 
 
 class UserTestCase(unittest.TestCase):
-
     def test_sum(self):
         self.assertEqual(2 + 2, 4)
 

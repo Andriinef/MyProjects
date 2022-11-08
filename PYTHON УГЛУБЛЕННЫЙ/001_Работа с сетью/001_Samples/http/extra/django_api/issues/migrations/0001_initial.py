@@ -7,21 +7,28 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Issue',
+            name="Issue",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=512, verbose_name='Название')),
-                ('description', models.TextField(default='', verbose_name='Описание')),
-                ('due_date', models.DateField(verbose_name='Выполнить к дате')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=512, verbose_name="Название")),
+                ("description", models.TextField(default="", verbose_name="Описание")),
+                ("due_date", models.DateField(verbose_name="Выполнить к дате")),
             ],
             options={
-                'verbose_name': 'Заметка',
-                'verbose_name_plural': 'Заметки',
+                "verbose_name": "Заметка",
+                "verbose_name_plural": "Заметки",
             },
         ),
     ]

@@ -1,5 +1,4 @@
-from mypackage.utils.core.physics.constants import E, PI
-
+from mypackage.utils.core.physics.constants import PI, E
 
 # from .constants import E, PI
 
@@ -9,4 +8,4 @@ def foo(value):
 
 
 def bar(value):
-    return value + PI ** 2
+    return value + PI**2

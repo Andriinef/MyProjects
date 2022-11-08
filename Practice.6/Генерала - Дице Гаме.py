@@ -17,7 +17,7 @@ def points(dice):
         return 40
     if len(set(dice)) == 2:
         return 30
-    if len(set(dice)) == 5 and '3' in dice and '4' in dice and '5' in dice:
+    if len(set(dice)) == 5 and "3" in dice and "4" in dice and "5" in dice:
         return 20
     return 0
 

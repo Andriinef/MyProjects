@@ -13,10 +13,10 @@ class Parser:
         return result
 
     def parse(self, expression):
-        packed_values = tuple(expression.split(' '))
+        packed_values = tuple(expression.split(" "))
         if len(packed_values) < 3:
             print("Wrong indentation, check your expression")
-            return 0, 0, '+'
+            return 0, 0, "+"
         a, op, b = packed_values
         return self.__convert_type(a), self.__convert_type(b), op
 
@@ -28,7 +28,7 @@ class Core:
             "+": lambda a, b: a + b,
             "-": lambda a, b: a - b,
             "/": lambda a, b: a / b,
-            "*": lambda a, b: a * b
+            "*": lambda a, b: a * b,
         }
 
     def calculate(self, expression):

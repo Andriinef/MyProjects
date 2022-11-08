@@ -1,9 +1,7 @@
-
 from api import _Api
 
 
 class Api(_Api):
-
     def __init__(self):
         super().__init__("CryptonatorApi")
 

@@ -1,9 +1,9 @@
 import unittest
 
-import test_api
+import cbr_api
 import models
 import privat_api
-import cbr_api
+import test_api
 
 
 class Test(unittest.TestCase):
@@ -44,5 +44,5 @@ class Test(unittest.TestCase):
         self.assertGreater(updated_after, updated_before)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

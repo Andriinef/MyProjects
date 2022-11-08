@@ -3,10 +3,10 @@ import threading
 
 
 def producer():
-    print('Set locking')
+    print("Set locking")
     # берем блокировку
     with lock:
-        print('done')
+        print("done")
         # попытка взять блокировку в рамках текущего потока дает нам DEAD LOCK
         # Из данной блокировки накак не выйти, так как мы ожидаем завершения
         # самого себя, чтобы взять блокировку- блокировка никогда не
@@ -14,7 +14,7 @@ def producer():
         # Актуально даже в рамках одного потока
         with lock:
             print("It's great")
-    print('Locking release!')
+    print("Locking release!")
 
 
 # блокировка, позволяющая отметитьк акой участок кода атомарным.

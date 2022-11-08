@@ -7,6 +7,7 @@ import os
 import random
 import re
 import time
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -41,7 +42,9 @@ def get_data(url):
 
         projects_urls = []
         for article in articles:
-            project_url = "http://www.edutainme.ru" + article.find("div", class_="txtBlock").find("a").get("href")
+            project_url = "http://www.edutainme.ru" + article.find(
+                "div", class_="txtBlock"
+            ).find("a").get("href")
             projects_urls.append(project_url)
 
         for project_url in projects_urls:
@@ -58,7 +61,9 @@ def get_data(url):
             project_data = soup.find("div", class_="inside")
 
             try:
-                project_logo = "http://www.edutainme.ru" + project_data.find("div", class_="Img logo").find("img").get("src")
+                project_logo = "http://www.edutainme.ru" + project_data.find(
+                    "div", class_="Img logo"
+                ).find("img").get("src")
             except Exception:
                 project_logo = "No project logo"
 
@@ -68,22 +73,33 @@ def get_data(url):
                 project_name = "No project name"
 
             try:
-                project_short_description = project_data.find("div", class_="txt").find("h4", class_="head").text
+                project_short_description = (
+                    project_data.find("div", class_="txt")
+                    .find("h4", class_="head")
+                    .text
+                )
             except Exception:
                 project_short_description = "No project short description"
 
             try:
-                project_website = project_data.find("div", class_="txt").find("p").find("a").text
+                project_website = (
+                    project_data.find("div", class_="txt").find("p").find("a").text
+                )
             except Exception:
                 project_website = "No project website"
 
             try:
-                project_full_description = project_data.find("div", class_="textWrap").find("div", class_="rBlock").text
+                project_full_description = (
+                    project_data.find("div", class_="textWrap")
+                    .find("div", class_="rBlock")
+                    .text
+                )
             except Exception:
                 project_full_description = "No project full description"
 
             def replace_string(string):
-                return ''.join(re.sub(r'(<p>|</p>)', "", string))
+                return "".join(re.sub(r"(<p>|</p>)", "", string))
+
             project_full_description = replace_string(project_full_description)
 
             # rep = ["<p>", "</p>"]
@@ -97,7 +113,7 @@ def get_data(url):
                     "URL логотипа проекта": project_logo,
                     "Короткое описание проекта": project_short_description,
                     "Сайт проекта": project_website,
-                    "Полное описание проекта": project_full_description.strip()
+                    "Полное описание проекта": project_full_description.strip(),
                 }
             )
 
@@ -112,7 +128,9 @@ def get_data(url):
 
 
 def main():
-    get_data("http://www.edutainme.ru/edindex/ajax.php?params=%7B%22LETTER%22%3Anull%2C%22RESTART%22%3A%22N%22%2C%22CHECK_DATES%22%3Afalse%2C%22arrWHERE%22%3A%5B%22iblock_startaps%22%5D%2C%22arrFILTER%22%3A%5B%22iblock_startaps%22%5D%2C%22startups%22%3A%22Y%22%2C%22SHOW_WHERE%22%3Atrue%2C%22PAGE_RESULT_COUNT%22%3A9%2C%22CACHE_TYPE%22%3A%22A%22%2C%22CACHE_TIME%22%3A0%2C%22TAGS_SORT%22%3A%22NAME%22%2C%22TAGS_PAGE_ELEMENTS%22%3A%22999999999999999999%22%2C%22TAGS_PERIOD%22%3A%22%22%2C%22TAGS_URL_SEARCH%22%3A%22%22%2C%22TAGS_INHERIT%22%3A%22Y%22%2C%22SHOW_RATING%22%3A%22Y%22%2C%22FONT_MAX%22%3A%2214%22%2C%22FONT_MIN%22%3A%2214%22%2C%22COLOR_NEW%22%3A%22000000%22%2C%22COLOR_OLD%22%3A%22C8C8C8%22%2C%22PERIOD_NEW_TAGS%22%3A%22%22%2C%22DISPLAY_TOP_PAGER%22%3A%22N%22%2C%22DISPLAY_BOTTOM_PAGER%22%3A%22N%22%2C%22SHOW_CHAIN%22%3A%22Y%22%2C%22COLOR_TYPE%22%3A%22Y%22%2C%22WIDTH%22%3A%22100%25%22%2C%22USE_LANGUAGE_GUESS%22%3A%22N%22%2C%22PATH_TO_USER_PROFILE%22%3A%22%23SITE_DIR%23people%5C%2Fuser%5C%2F%23USER_ID%23%5C%2F%22%2C%22SHOW_WHEN%22%3Afalse%2C%22PAGER_TITLE%22%3A%22%5Cu0420%5Cu0435%5Cu0437%5Cu0443%5Cu043b%5Cu044c%5Cu0442%5Cu0430%5Cu0442%5Cu044b+%5Cu043f%5Cu043e%5Cu0438%5Cu0441%5Cu043a%5Cu0430%22%2C%22PAGER_SHOW_ALWAYS%22%3Atrue%2C%22USE_TITLE_RANK%22%3Afalse%2C%22PAGER_TEMPLATE%22%3A%22%22%2C%22DEFAULT_SORT%22%3A%22rank%22%2C%22noTitle%22%3A%22Y%22%7D")
+    get_data(
+        "http://www.edutainme.ru/edindex/ajax.php?params=%7B%22LETTER%22%3Anull%2C%22RESTART%22%3A%22N%22%2C%22CHECK_DATES%22%3Afalse%2C%22arrWHERE%22%3A%5B%22iblock_startaps%22%5D%2C%22arrFILTER%22%3A%5B%22iblock_startaps%22%5D%2C%22startups%22%3A%22Y%22%2C%22SHOW_WHERE%22%3Atrue%2C%22PAGE_RESULT_COUNT%22%3A9%2C%22CACHE_TYPE%22%3A%22A%22%2C%22CACHE_TIME%22%3A0%2C%22TAGS_SORT%22%3A%22NAME%22%2C%22TAGS_PAGE_ELEMENTS%22%3A%22999999999999999999%22%2C%22TAGS_PERIOD%22%3A%22%22%2C%22TAGS_URL_SEARCH%22%3A%22%22%2C%22TAGS_INHERIT%22%3A%22Y%22%2C%22SHOW_RATING%22%3A%22Y%22%2C%22FONT_MAX%22%3A%2214%22%2C%22FONT_MIN%22%3A%2214%22%2C%22COLOR_NEW%22%3A%22000000%22%2C%22COLOR_OLD%22%3A%22C8C8C8%22%2C%22PERIOD_NEW_TAGS%22%3A%22%22%2C%22DISPLAY_TOP_PAGER%22%3A%22N%22%2C%22DISPLAY_BOTTOM_PAGER%22%3A%22N%22%2C%22SHOW_CHAIN%22%3A%22Y%22%2C%22COLOR_TYPE%22%3A%22Y%22%2C%22WIDTH%22%3A%22100%25%22%2C%22USE_LANGUAGE_GUESS%22%3A%22N%22%2C%22PATH_TO_USER_PROFILE%22%3A%22%23SITE_DIR%23people%5C%2Fuser%5C%2F%23USER_ID%23%5C%2F%22%2C%22SHOW_WHEN%22%3Afalse%2C%22PAGER_TITLE%22%3A%22%5Cu0420%5Cu0435%5Cu0437%5Cu0443%5Cu043b%5Cu044c%5Cu0442%5Cu0430%5Cu0442%5Cu044b+%5Cu043f%5Cu043e%5Cu0438%5Cu0441%5Cu043a%5Cu0430%22%2C%22PAGER_SHOW_ALWAYS%22%3Atrue%2C%22USE_TITLE_RANK%22%3Afalse%2C%22PAGER_TEMPLATE%22%3A%22%22%2C%22DEFAULT_SORT%22%3A%22rank%22%2C%22noTitle%22%3A%22Y%22%7D"
+    )
 
 
 if __name__ == "__main__":

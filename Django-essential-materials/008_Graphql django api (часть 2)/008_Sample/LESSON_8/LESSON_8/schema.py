@@ -1,6 +1,5 @@
 import graphene
 import graphql_jwt
-
 from graph_app import schema
 from graph_app_two import mutations
 

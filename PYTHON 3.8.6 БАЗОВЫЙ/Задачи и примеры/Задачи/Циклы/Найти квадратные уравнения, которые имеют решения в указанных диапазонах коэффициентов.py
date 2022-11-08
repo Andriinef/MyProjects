@@ -12,12 +12,12 @@
 from math import sqrt
 
 # диапазоны коэффициентов a, b, c
-a1 = int(input('a1: '))
-a2 = int(input('a2: '))
-b1 = int(input('b1: '))
-b2 = int(input('b2: '))
-c1 = int(input('c1: '))
-c2 = int(input('c2: '))
+a1 = int(input("a1: "))
+a2 = int(input("a2: "))
+b1 = int(input("b1: "))
+b2 = int(input("b2: "))
+c1 = int(input("c1: "))
+c2 = int(input("c2: "))
 
 # Создаются объекты-диапазоны.
 # +1 позволяет включить верхнюю границу
@@ -42,7 +42,7 @@ for i in a:
         for k in c:
             # Выводятся текущие значения
             # коэффициентов a, b, c.
-            print(i, j, k, end=' ')
+            print(i, j, k, end=" ")
 
             # вычисляется дискриминант
             D = j * j - 4 * i * k
@@ -55,12 +55,12 @@ for i in a:
 
                 x1 = round(x1, 2)
                 x2 = round(x2, 2)
-                print('Yes', x1, x2)
+                print("Yes", x1, x2)
 
             # Если дискриминант меньше нуля,
             else:
                 # корней нет.
-                print('No')
+                print("No")
 
 # a1: 1
 # a2: 3

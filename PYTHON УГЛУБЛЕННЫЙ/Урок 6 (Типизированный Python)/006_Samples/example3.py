@@ -7,7 +7,7 @@ class User:
         self.last_name = last_name
 
     def get_full_name(self):
-        return self.first_name + ' ' + self.last_name
+        return self.first_name + " " + self.last_name
 
 
 def create_users_v1(first_names: list, last_names: list) -> list:
@@ -19,8 +19,7 @@ def create_users_v1(first_names: list, last_names: list) -> list:
     return users
 
 
-def create_users_v2(first_names: List[str],
-                    last_names: List[str]) -> List[User]:
+def create_users_v2(first_names: List[str], last_names: List[str]) -> List[User]:
     users = []
     items = zip(first_names, last_names)
     for first_name, last_name in items:
@@ -29,7 +28,7 @@ def create_users_v2(first_names: List[str],
     return users
 
 
-users1 = create_users_v2(['f1', 'f2'], ['l1', 'l2'])
-users2 = create_users_v2(['f1', '10'], ['10.5', 'l2'])
-users3 = create_users_v2(['f1', 'f2'], ['[]', 'l2'])
+users1 = create_users_v2(["f1", "f2"], ["l1", "l2"])
+users2 = create_users_v2(["f1", "10"], ["10.5", "l2"])
+users3 = create_users_v2(["f1", "f2"], ["[]", "l2"])
 print(users2[0].get_full_name())

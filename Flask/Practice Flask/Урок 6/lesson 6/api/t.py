@@ -1,4 +1,3 @@
-
 logins_map = {"Kseniia": "ksu", "Alexey": "alex74"}
 
 

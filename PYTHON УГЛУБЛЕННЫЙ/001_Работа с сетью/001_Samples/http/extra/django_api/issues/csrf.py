@@ -7,7 +7,7 @@ class DisableCSRF(object):
         # Code to be executed for each request before
         # the view (and later middleware) are called.
 
-        setattr(request, '_dont_enforce_csrf_checks', True)
+        setattr(request, "_dont_enforce_csrf_checks", True)
         response = self.get_response(request)
 
         # Code to be executed for each request/response after

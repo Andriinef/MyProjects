@@ -4,9 +4,16 @@ from tkinter import *
 
 
 def bros():
-    x = random.choice(["Game/bones/image/b.png", "Game/bones/image/b2.png",
-                       "Game/bones/image/b3.png", "Game/bones/image/b4.png",
-                       "Game/bones/image/b5.png", "Game/bones/image/b6.png"])  # Рандомный выбор
+    x = random.choice(
+        [
+            "Game/bones/image/b.png",
+            "Game/bones/image/b2.png",
+            "Game/bones/image/b3.png",
+            "Game/bones/image/b4.png",
+            "Game/bones/image/b5.png",
+            "Game/bones/image/b6.png",
+        ]
+    )  # Рандомный выбор
     return x
 
 

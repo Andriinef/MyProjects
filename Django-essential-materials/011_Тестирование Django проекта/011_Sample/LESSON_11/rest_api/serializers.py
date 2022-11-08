@@ -1,17 +1,17 @@
-from graph_app.models import Car, ApiClient, Model, Make
+from graph_app.models import ApiClient, Car, Make, Model
 from rest_framework import serializers
 
 
 class ModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Model
-        fields = '__all__'
+        fields = "__all__"
 
 
 class MakeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Make
-        fields = '__all__'
+        fields = "__all__"
 
 
 class CarSerializer(serializers.HyperlinkedModelSerializer):
@@ -25,4 +25,4 @@ class CarSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Car
-        fields = ['license_plate', 'notes', 'make', 'model']
+        fields = ["license_plate", "notes", "make", "model"]

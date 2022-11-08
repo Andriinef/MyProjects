@@ -2,27 +2,27 @@ import asyncio
 
 
 async def async_worker(seconds):
-    print('Sleep using {}'.format(seconds))
+    print("Sleep using {}".format(seconds))
     await asyncio.sleep(seconds)
-    print('Done sleep: {}'.format(seconds))
+    print("Done sleep: {}".format(seconds))
 
 
 async def stop_event_loop(loop, seconds):
-    print('Stop in {}s'.format(seconds))
+    print("Stop in {}s".format(seconds))
     await asyncio.sleep(seconds)
     loop.stop()
-    print('Stopped')
+    print("Stopped")
 
 
 async def resolve_future(future):
     await asyncio.sleep(5)
-    print('Future set_result')
+    print("Future set_result")
     future.set_result(10)
 
 
 async def wait_for_future(future):
     result = await future
-    print('Future result: {}'.format(result))
+    print("Future result: {}".format(result))
 
 
 event_loop = asyncio.get_event_loop()

@@ -3,7 +3,7 @@ import asyncio
 
 @asyncio.coroutine
 def async_worker(number, divider):
-    print('Worker {} started'.format(number))
+    print("Worker {} started".format(number))
     yield from asyncio.sleep(0)
     print(number / divider)
 

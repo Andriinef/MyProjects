@@ -8,7 +8,7 @@
 #     return type(name, base, attrs)
 class Meta(type):
     def __new__(mcs, name, base, attrs):
-        attrs.update({'MAX_COORD': 100, 'MIN_COORD': 0})
+        attrs.update({"MAX_COORD": 100, "MIN_COORD": 0})
         return type.__new__(mcs, name, base, attrs)
 
     # def __init__(cls, name, base, attrs):

@@ -21,7 +21,7 @@ print(repr(text))
 # Превращение строки в список.
 # Разделение происходит в местах
 # символа новой строки.
-text = text.split('\n')
+text = text.split("\n")
 
 print(text)
 # 'one two\ntown city\nbig small'

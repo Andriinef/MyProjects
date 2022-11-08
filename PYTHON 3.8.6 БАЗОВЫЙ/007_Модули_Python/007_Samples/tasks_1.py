@@ -15,16 +15,20 @@ def get_max_count_word(counts_dict):
 
 def get_max_count_word_combinations(words, max_count_word):
     combinations = itertools.combinations(words, 2)
-    max_count_word_combinations = [comb for comb in combinations if max_count_word in comb]
+    max_count_word_combinations = [
+        comb for comb in combinations if max_count_word in comb
+    ]
     return max_count_word_combinations
 
 
 def process(text):
-    words = text.split(' ')
+    words = text.split(" ")
     counts = collections.Counter(words)
     max_count_word = get_max_count_word(counts)
     max_count_word_combinations = get_max_count_word_combinations(words, max_count_word)
-    random_combination = max_count_word_combinations[random.randint(0, len(max_count_word_combinations)-1)]
+    random_combination = max_count_word_combinations[
+        random.randint(0, len(max_count_word_combinations) - 1)
+    ]
     return random_combination
 
 

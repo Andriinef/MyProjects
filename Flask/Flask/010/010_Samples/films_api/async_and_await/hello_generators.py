@@ -43,5 +43,5 @@ def jump_range(up_to):
         index += jump
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -3,17 +3,13 @@ from models import Post
 
 
 def pytest_runtest_setup(item):
-    print('SetUp', item)
+    print("SetUp", item)
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 # @pytest.fixture(scope='module')
 # @pytest.fixture(scope='class')
 # @pytest.fixture(scope='function')
 # @pytest.fixture
 def post(user):
-    return Post(
-        user=user,
-        comment='A_Draft Comment',
-        fixture=True
-    )
+    return Post(user=user, comment="A_Draft Comment", fixture=True)

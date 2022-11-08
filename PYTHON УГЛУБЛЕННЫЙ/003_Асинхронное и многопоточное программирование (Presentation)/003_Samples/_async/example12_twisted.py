@@ -1,4 +1,4 @@
-from twisted.internet import reactor, defer
+from twisted.internet import defer, reactor
 
 
 def resolve_deferred(deff, value):
@@ -15,21 +15,16 @@ def resolve_deferred(deff, value):
 
 
 def make_data(raw, timeout):
-    print('make data called')
+    print("make data called")
     # Используя фреймворк twisted, создаем deferred, он аналогичен Future.
     deferred = defer.Deferred()  # Future()
     # добавляем в цикл событий задачи к выполнению
-    reactor.callLater(
-        timeout,
-        resolve_deferred,
-        deferred,
-        raw
-    )  # Future.set_result
+    reactor.callLater(timeout, resolve_deferred, deferred, raw)  # Future.set_result
     return deferred
 
 
 def pipe_1(result):
-    print('Logging value: {}'.format(result))
+    print("Logging value: {}".format(result))
     return result
 
 
@@ -46,7 +41,7 @@ def pipe_4(result):
 
 
 def error_1(e):
-    print('Error: {}'.format(e))
+    print("Error: {}".format(e))
 
 
 deferred = make_data(40, 2)
@@ -70,7 +65,7 @@ deferred.addCallbacks(pipe_1, error_1)
 # добавляем задачи остановки цикла событий через 4 сек.
 reactor.callLater(4, reactor.stop)
 
-print('Reactor is starting.')
+print("Reactor is starting.")
 # запускаем цикл событий
 reactor.run()
-print('Reactor is stopped.')
+print("Reactor is stopped.")

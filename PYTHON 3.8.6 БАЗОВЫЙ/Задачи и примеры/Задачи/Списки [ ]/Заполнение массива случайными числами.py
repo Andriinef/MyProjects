@@ -28,6 +28,6 @@ for x in range(1, N + 1):
 
     for j in array:
         # текущий элемент выводится на экран
-        print(j, end=' ')
+        print(j, end=" ")
 
     print()

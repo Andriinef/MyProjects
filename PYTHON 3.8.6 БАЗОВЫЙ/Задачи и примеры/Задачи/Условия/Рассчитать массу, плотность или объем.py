@@ -12,7 +12,7 @@ flag = input("What to calculate? (m, d, v): ")
 
 # Если выбрана масса, то надо запросить плотность
 # и объём. Вычислить массу по формуле m = dv.
-if flag == 'm':
+if flag == "m":
     # функция float() преобразует строку в
     # вещественное число
     d = float(input("Density: "))
@@ -20,13 +20,13 @@ if flag == 'm':
     result = d * v  # mass
 # Если выбрана плотность, то запрашиваются масса
 # и объём. Используется формула d = m/v
-elif flag == 'd':
+elif flag == "d":
     m = float(input("Mass: "))
     v = float(input("Volume: "))
     result = m / v  # density
 # Если выбран объём, то считываются масса
 # и плотность. Объем находится как v = m/d
-elif flag == 'v':
+elif flag == "v":
     m = float(input("Mass: "))
     d = float(input("Density: "))
     result = m / d  # volume

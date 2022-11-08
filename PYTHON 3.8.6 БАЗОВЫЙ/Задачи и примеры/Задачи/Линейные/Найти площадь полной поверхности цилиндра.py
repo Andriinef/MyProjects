@@ -8,10 +8,10 @@
 from math import pi
 
 # высота цилиндра
-h = float(input('h = '))
+h = float(input("h = "))
 
 # радиус основания цилиндра
-r = float(input('r = '))
+r = float(input("r = "))
 
 # У цилиндра два основания.
 # Площадь каждого Пи * R * R.
@@ -24,4 +24,4 @@ side = 2 * pi * r * h
 # полная площадь поверхности
 area = circles + side
 
-print('A =', round(area, 2))
+print("A =", round(area, 2))

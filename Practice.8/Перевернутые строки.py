@@ -14,10 +14,10 @@ def solution(string):
 
 @test.describe("Fixed Tests")
 def basic_tests():
-    @test.it('Basic A_Draft Cases')
+    @test.it("Basic A_Draft Cases")
     def basic_test_cases():
-        test.assert_equals(solution('world'), 'dlrow')
-        test.assert_equals(solution('hello'), 'olleh')
-        test.assert_equals(solution(''), '')
-        test.assert_equals(solution('h'), 'h')
-        test.assert_equals(solution('1, 2, 3'), '3, 2, 1')
+        test.assert_equals(solution("world"), "dlrow")
+        test.assert_equals(solution("hello"), "olleh")
+        test.assert_equals(solution(""), "")
+        test.assert_equals(solution("h"), "h")
+        test.assert_equals(solution("1, 2, 3"), "3, 2, 1")

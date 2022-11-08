@@ -1,4 +1,4 @@
-from typing import TypeVar, Dict, ClassVar
+from typing import ClassVar, Dict, TypeVar
 
 
 class User:
@@ -9,18 +9,18 @@ class User:
         self.last_name = last_name
 
 
-user = User('test1', 'test2')
+user = User("test1", "test2")
 # user.meta = {}
 User.meta = {}
 
 
 class A:
-    def foo(self, instance: 'B'):
+    def foo(self, instance: "B"):
         pass
 
 
 class B:
-    def foo(self, instance: 'A'):
+    def foo(self, instance: "A"):
         pass
 
 

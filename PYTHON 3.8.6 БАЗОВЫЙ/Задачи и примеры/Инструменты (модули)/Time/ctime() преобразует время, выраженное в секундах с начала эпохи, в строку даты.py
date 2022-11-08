@@ -6,21 +6,21 @@ import time
 
 # без аргумента возвращает
 # текущее время (местное)
-print('now:')
+print("now:")
 print(time.ctime())
 
 # дата начала эпохи
-print('\nstart (local):')
+print("\nstart (local):")
 print(time.ctime(0))
 
 # преобразование секунд в строку-дату
-print('\nany:')
+print("\nany:")
 print(time.ctime(1023231233))
 # now:
 # Wed Jul 22 16:06:58 2020
 #
 # start (local):
 # Thu Jan  1 03:00:00 1970
-# 
+#
 # any:
 # Wed Jun  5 02:53:53 2002

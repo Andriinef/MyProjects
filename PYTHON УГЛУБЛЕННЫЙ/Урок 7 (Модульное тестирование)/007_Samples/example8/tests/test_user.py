@@ -1,18 +1,16 @@
-import unittest.mock
 import unittest
+import unittest.mock
+
 import models
 
 
 class UserTestCase(unittest.TestCase):
-
     def setUp(self):
-        self.email = 'test@example.com'
-        self.first_name = 'test1'
-        self.last_name = 'test2'
+        self.email = "test@example.com"
+        self.first_name = "test1"
+        self.last_name = "test2"
         self.user = models.User(
-            email=self.email,
-            first_name=self.first_name,
-            last_name=self.last_name
+            email=self.email, first_name=self.first_name, last_name=self.last_name
         )
 
     def test_constructor(self):
@@ -24,7 +22,7 @@ class UserTestCase(unittest.TestCase):
         """
         Тестируем метод `.get_full_name()`.
         """
-        expected_result = '{first_name} {last_name}'.format(
+        expected_result = "{first_name} {last_name}".format(
             first_name=self.first_name,
             last_name=self.last_name,
         )
@@ -36,7 +34,7 @@ class UserTestCase(unittest.TestCase):
         """
         Проверяем метод __str__, возвращает ли он коррестный тип и значение.
         """
-        expected_result = 'User: <{id}: {name}>'.format(
+        expected_result = "User: <{id}: {name}>".format(
             id=self.user.id,
             name=self.user.get_full_name(),
         )
@@ -44,7 +42,7 @@ class UserTestCase(unittest.TestCase):
         self.assertIsInstance(str_value, str)
         self.assertEqual(str_value, expected_result)
 
-    @unittest.mock.patch('models.send_mail')
+    @unittest.mock.patch("models.send_mail")
     def test_send_mail(self, mocked_send_mail):
         """
         Патчим метод отпарвки почты, чтобы в момент тестирования не
@@ -56,5 +54,5 @@ class UserTestCase(unittest.TestCase):
         mocked_send_mail.assert_called_once_with(
             self.user.email,
             models.SUBJECT_REGISTRATION.format(name=self.user.get_full_name()),
-            models.BODY_REGISTRATION
+            models.BODY_REGISTRATION,
         )

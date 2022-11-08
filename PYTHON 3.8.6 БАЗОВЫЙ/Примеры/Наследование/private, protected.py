@@ -1,13 +1,13 @@
 class Geom:
-    name = 'Geom'
+    name = "Geom"
 
     def __init__(self, x1, y1, x2, y2, x3, y3):
         print(f"Geom {self.__class__}")
-        self.__x = x1   # private
+        self.__x = x1  # private
         self.__y1 = y1
-        self._x2 = x2   # protected
+        self._x2 = x2  # protected
         self._y2 = y2
-        self.x3 = x3   # public
+        self.x3 = x3  # public
         self.y3 = y3
         self.__verify_coord(x1)
 

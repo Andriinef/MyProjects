@@ -1,3 +1,1 @@
-proxies = {
-    "https": "your_proxy_ip:port"
-}
+proxies = {"https": "your_proxy_ip:port"}

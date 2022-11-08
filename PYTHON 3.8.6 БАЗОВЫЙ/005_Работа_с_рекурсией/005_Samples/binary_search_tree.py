@@ -49,4 +49,3 @@ for i in range(len(a)):
         root.insert(a[i])
 
 root.search(2)
-

@@ -1,8 +1,8 @@
-from flask import render_template, make_response, jsonify, request, redirect, url_for
-import xmltodict
-
-from models import XRate, ApiLog
 import api
+import xmltodict
+from flask import (jsonify, make_response, redirect, render_template, request,
+                   url_for)
+from models import ApiLog, XRate
 
 
 class BaseController:
@@ -48,12 +48,27 @@ class GetApiRates(BaseController):
         return xrates
 
     def _get_xml(self, xrates):
-        d = {"xrates": {"xrate": [
-            {"from": rate.from_currency, "to": rate.to_currency, "rate": rate.rate} for rate in xrates]}}
-        return make_response(xmltodict.unparse(d), {'Content-Type': 'text/xml'})
+        d = {
+            "xrates": {
+                "xrate": [
+                    {
+                        "from": rate.from_currency,
+                        "to": rate.to_currency,
+                        "rate": rate.rate,
+                    }
+                    for rate in xrates
+                ]
+            }
+        }
+        return make_response(xmltodict.unparse(d), {"Content-Type": "text/xml"})
 
     def _get_json(self, xrates):
-        return jsonify([{"from": rate.from_currency, "to": rate.to_currency, "rate": rate.rate} for rate in xrates])
+        return jsonify(
+            [
+                {"from": rate.from_currency, "to": rate.to_currency, "rate": rate.rate}
+                for rate in xrates
+            ]
+        )
 
 
 class UpdateRates(BaseController):

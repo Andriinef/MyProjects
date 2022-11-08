@@ -8,14 +8,14 @@ for i in range(5):
     # в диапазоне [0.0, 1.0)
     print(random.random())
 
-print('---------')
+print("---------")
 
 for i in range(5):
     # случайное вещественное
     # в диапазоне [a, b]
-    print(random.uniform(i, i+1))
+    print(random.uniform(i, i + 1))
 
-print('-' * 10)
+print("-" * 10)
 
 for i in range(5):
     print(random.uniform(5, 10))

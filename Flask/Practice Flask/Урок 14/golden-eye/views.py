@@ -1,10 +1,9 @@
 from functools import wraps
 
-from flask import request, abort
-
-from app import app
 import controllers
+from app import app
 from config import IP_LIST
+from flask import abort, request
 
 
 def check_ip(func):

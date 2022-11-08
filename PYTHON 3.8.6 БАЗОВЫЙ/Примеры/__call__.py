@@ -31,4 +31,4 @@ def df_sin(x):
 
 
 df_sin = Derivate(df_sin)
-print(df_sin(math.pi/3))
+print(df_sin(math.pi / 3))

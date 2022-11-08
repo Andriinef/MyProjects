@@ -22,7 +22,7 @@ def reverse_words(s):
     # в строку, вставляя между элементами строку,
     # к которой применяется.
     # В данном случае это одиночный пробел.
-    return ' '.join(s)
+    return " ".join(s)
 
 
 print(reverse_words(input()))

@@ -11,7 +11,7 @@ class Person:
         self.surname = person_surname
 
     def about(self):
-        return self.name + ' ' + self.surname
+        return self.name + " " + self.surname
 
 
 # Список, в котором будут храниться

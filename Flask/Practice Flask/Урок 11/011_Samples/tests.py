@@ -1,13 +1,12 @@
-import unittest
 import json
-from unittest.mock import patch
+import unittest
 import xml.etree.ElementTree as ET
+from unittest.mock import patch
 
-import xmltodict
-import requests
-
-import models
 import api
+import models
+import requests
+import xmltodict
 
 
 def get_privat_response(*args, **kwds):
@@ -24,7 +23,6 @@ def get_privat_response(*args, **kwds):
 
 
 class Test(unittest.TestCase):
-
     @unittest.skip("skip")
     def test_privat_usd(self):
 
@@ -42,7 +40,10 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
+        self.assertEqual(
+            api_log.request_url,
+            "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11",
+        )
         self.assertIsNotNone(api_log.response_text)
 
         self.assertIn('{"ccy":"USD","base_ccy":"UAH",', api_log.response_text)
@@ -64,7 +65,10 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
+        self.assertEqual(
+            api_log.request_url,
+            "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11",
+        )
 
     @unittest.skip("skip")
     def test_cbr(self):
@@ -82,12 +86,15 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
+        self.assertEqual(
+            api_log.request_url,
+            "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json",
+        )
         self.assertIsNotNone(api_log.response_text)
         self.assertIn("<NumCode>840</NumCode>", api_log.response_text)
 
     @unittest.skip("skip")
-    @patch('api._Api._send', new=get_privat_response)
+    @patch("api._Api._send", new=get_privat_response)
     def test_privat_mock(self):
 
         xrate = models.XRate.get(id=1)
@@ -104,10 +111,15 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
+        self.assertEqual(
+            api_log.request_url,
+            "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11",
+        )
         self.assertIsNotNone(api_log.response_text)
 
-        self.assertEqual('[{"ccy": "USD", "base_ccy": "UAH", "sale": "30.0"}]', api_log.response_text)
+        self.assertEqual(
+            '[{"ccy": "USD", "base_ccy": "UAH", "sale": "30.0"}]', api_log.response_text
+        )
 
     @unittest.skip("skip")
     def test_api_error(self):
@@ -115,7 +127,9 @@ class Test(unittest.TestCase):
         xrate = models.XRate.get(id=1)
         updated_before = xrate.updated
 
-        self.assertRaises(requests.exceptions.RequestException, api.update_rate, 840, 980)
+        self.assertRaises(
+            requests.exceptions.RequestException, api.update_rate, 840, 980
+        )
 
         xrate = models.XRate.get(id=1)
         updated_after = xrate.updated
@@ -126,13 +140,21 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
+        self.assertEqual(
+            api_log.request_url,
+            "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11",
+        )
         self.assertIsNone(api_log.response_text)
         self.assertIsNotNone(api_log.error)
 
-        error_log = models.ErrorLog.select().order_by(models.ErrorLog.created.desc()).first()
+        error_log = (
+            models.ErrorLog.select().order_by(models.ErrorLog.created.desc()).first()
+        )
         self.assertIsNotNone(error_log)
-        self.assertEqual(error_log.request_url, "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
+        self.assertEqual(
+            error_log.request_url,
+            "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11",
+        )
         self.assertIsNotNone(error_log.traceback)
         self.assertEqual(api_log.error, error_log.error)
         self.assertIn("Connection to api.privatbank.ua timed out", error_log.error)
@@ -158,7 +180,9 @@ class Test(unittest.TestCase):
         api_log = models.ApiLog.select().order_by(models.ApiLog.created.desc()).first()
 
         self.assertIsNotNone(api_log)
-        self.assertEqual(api_log.request_url, "https://api.cryptonator.com/api/ticker/btc-usd")
+        self.assertEqual(
+            api_log.request_url, "https://api.cryptonator.com/api/ticker/btc-usd"
+        )
         self.assertIsNotNone(api_log.response_text)
 
         self.assertIn('{"base":"BTC","target":"UAH","price":', api_log.response_text)
@@ -199,5 +223,5 @@ class Test(unittest.TestCase):
         self.assertEqual(len(rows), 5)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

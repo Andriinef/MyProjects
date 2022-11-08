@@ -1,10 +1,10 @@
 import asyncio
-from asyncio.coroutines import iscoroutine
 import time
+from asyncio.coroutines import iscoroutine
 
 
 def sync_worker(number, divider):
-    print('Sync Worker started with values: {} / {}'.format(number, divider))
+    print("Sync Worker started with values: {} / {}".format(number, divider))
     time.sleep(1)
     print(number / divider)
 
@@ -14,7 +14,7 @@ def async_worker(number, divider):
     """
     Зачем писать свой декоратор, если в Python 3.5 уже он имеется в asyncio.
     """
-    print('Async Worker started with values: {} / {}'.format(number, divider))
+    print("Async Worker started with values: {} / {}".format(number, divider))
     yield from asyncio.sleep(3)
     print(number / divider)
 

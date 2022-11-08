@@ -46,7 +46,7 @@ A.static_print_word()  # Class Word
 
 def just_func(cls):
     print(cls)
-    if hasattr(cls, 'w'):
+    if hasattr(cls, "w"):
         print(cls.w)
 
 

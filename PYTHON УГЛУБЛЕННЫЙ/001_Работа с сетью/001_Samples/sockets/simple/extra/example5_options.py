@@ -2,7 +2,7 @@ import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # 255.255.255.255
-sock.bind(('127.0.0.1', 8888))
+sock.bind(("127.0.0.1", 8888))
 # указываем очередь в 5 соединений, количество клиентов, которые смогут
 # подключиться к серверу одновременно.
 sock.listen(5)
@@ -20,4 +20,4 @@ client, addr = sock.accept()
 result = client.recv(1024)
 client.close()
 
-print('Message', result.decode('utf-8'))
+print("Message", result.decode("utf-8"))

@@ -9,7 +9,7 @@ def exec_watcher():
 
 
 def print_files():
-    for i in os.listdir('.'):
+    for i in os.listdir("."):
         print(i)
     exec_watcher()
 

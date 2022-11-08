@@ -18,31 +18,29 @@ def init(self, first_name, last_name, middle_name):
 
 class BaseUser(object):
     def __str__(self):
-        return '<user-object/>'
+        return "<user-object/>"
 
 
 attrs = {
-    'first_name': '',
-    'last_name': '',
-    'middle_name': '',
-    'get_first_name': get_first_name,
-    'get_last_name': get_last_name,
-    'get_middle_name': get_middle_name,
-    '__init__': init
+    "first_name": "",
+    "last_name": "",
+    "middle_name": "",
+    "get_first_name": get_first_name,
+    "get_last_name": get_last_name,
+    "get_middle_name": get_middle_name,
+    "__init__": init,
 }
 
-bases = (
-    BaseUser,
-)
+bases = (BaseUser,)
 
 # создаем класс, используя класс type
 # 1. название класса
 # 2. классы от которых наследуемся
 # 3. набор аттрибутов и методов
-User = type('User', bases, attrs)
+User = type("User", bases, attrs)
 
 # вызываем конструктор, который у нас описан функцией `init` выше
-user1 = User('John', 'A_Draft', 'Te100vi4')
+user1 = User("John", "A_Draft", "Te100vi4")
 
 print(str(user1))
 print(user1.get_first_name())

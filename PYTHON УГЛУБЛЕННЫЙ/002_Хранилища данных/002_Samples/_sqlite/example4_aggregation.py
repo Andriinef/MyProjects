@@ -30,15 +30,15 @@ class RowSet:
 
     def finalize(self):
         # завершение агрегации
-        return ';'.join(self.rows)
+        return ";".join(self.rows)
 
 
-conn = sqlite3.connect(':memory:')
+conn = sqlite3.connect(":memory:")
 # регистрируем наш класс для работы с нашей агрегационой функцией
-conn.create_aggregate('row_set', 1, RowSet)
+conn.create_aggregate("row_set", 1, RowSet)
 
 cur = conn.cursor()
-cur.execute('CREATE TABLE users(first_name)')
+cur.execute("CREATE TABLE users(first_name)")
 cur.execute(
     """INSERT INTO users(first_name)
        VALUES ("Dmitry"),
@@ -51,6 +51,6 @@ cur.execute(
 
 # пробуем запуск агрегации по полю first_name- реультат будет конкатенация
 # всех first_name в таблица
-cur.execute('SELECT row_set(first_name) AS result FROM users')
+cur.execute("SELECT row_set(first_name) AS result FROM users")
 results = cur.fetchall()
 print(dict())

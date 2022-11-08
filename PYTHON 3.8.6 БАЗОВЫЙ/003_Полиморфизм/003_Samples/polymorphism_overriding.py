@@ -12,7 +12,7 @@ m.print_a(2)
 
 class Exponent(Multiplier):
     def print_a(self, x):
-        print(self._a ** x)
+        print(self._a**x)
 
 
 e = Exponent(4)

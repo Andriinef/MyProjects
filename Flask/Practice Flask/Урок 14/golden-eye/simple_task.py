@@ -1,4 +1,3 @@
-
 from datetime import datetime
 
 from apscheduler.schedulers.blocking import BlockingScheduler
@@ -6,7 +5,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('interval', minutes=1)
+@sched.scheduled_job("interval", minutes=1)
 def get_now():
     print(f"Inside function now: {datetime.now()}")
 

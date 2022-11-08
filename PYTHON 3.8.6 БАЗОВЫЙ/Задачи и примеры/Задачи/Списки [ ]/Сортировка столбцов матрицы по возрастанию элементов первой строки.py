@@ -32,15 +32,14 @@ while k > 0:
     # первой строки на отрезке индексов
     # до k включительно.
     ind = 0
-    for j in range(1, k+1):
+    for j in range(1, k + 1):
         if matrix[0][j] > matrix[0][ind]:
             ind = j
 
     # Обмен значений между всеми элементами
     # двух столбцов: с индексом ind и k.
     for i in range(N):
-        matrix[i][ind], matrix[i][k] = \
-            matrix[i][k], matrix[i][ind]
+        matrix[i][ind], matrix[i][k] = matrix[i][k], matrix[i][ind]
 
     k -= 1
 

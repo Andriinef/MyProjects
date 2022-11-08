@@ -3,9 +3,8 @@ from pygame.sprite import Sprite
 
 
 class Gun(Sprite):
-
     def __init__(self, screen):
-        """ иницилизация пушки"""
+        """иницилизация пушки"""
         super(Gun, self).__init__()
         self.screen = screen
         self.image = pygame.image.load("images/gun.png")

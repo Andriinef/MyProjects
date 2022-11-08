@@ -22,17 +22,17 @@ print(repr(tab_text))
 # Текст преобразуется в список.
 # Разделение происходит в местах
 # знака табуляции.
-list_text = tab_text.split('\t')
+list_text = tab_text.split("\t")
 
 # Список объединяется в текст.
 # Между элементами списка вставляется строка,
 # состоящая из четырёх пробелов.
-space_text = '    '.join(list_text)
+space_text = "    ".join(list_text)
 
 print(repr(space_text))
 
 # файл открывается на запись
-space_file = open("space.txt", 'w')
+space_file = open("space.txt", "w")
 # текст записывается в файл
 space_file.write(space_text)
 # файл закрывается

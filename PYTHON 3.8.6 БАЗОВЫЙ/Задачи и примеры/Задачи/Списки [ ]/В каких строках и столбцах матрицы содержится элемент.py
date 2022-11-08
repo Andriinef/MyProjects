@@ -17,7 +17,7 @@ matrix = []
 for i in range(N):
     row = []
     for j in range(M):
-        row.append(int(random()*40)+10)
+        row.append(int(random() * 40) + 10)
     matrix.append(row)
 
 # построчный вывод матрицы

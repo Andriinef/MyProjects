@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7=w!#m)7l@laslz1237b2wgem$b%pdw*-clmxk^d6stj^zb$ua'
+SECRET_KEY = "7=w!#m)7l@laslz1237b2wgem$b%pdw*-clmxk^d6stj^zb$ua"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,58 +30,57 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django_inlinecss',
-    'crispy_forms',
-    'simple_email_confirmation',
-    'send_email',
-    'reset_password_app'
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django_inlinecss",
+    "crispy_forms",
+    "simple_email_confirmation",
+    "send_email",
+    "reset_password_app",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'LESSON_6.urls'
+ROOT_URLCONF = "LESSON_6.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'send_email/templates']
-        ,
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "send_email/templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'LESSON_6.wsgi.application'
+WSGI_APPLICATION = "LESSON_6.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -90,25 +89,25 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -121,11 +120,11 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "media/")
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/", 'img')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/", "img")
 
-MEDIA_URL = '/test-email/images/'
+MEDIA_URL = "/test-email/images/"
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # GMAIL CONFIG
@@ -138,12 +137,12 @@ MEDIA_URL = '/test-email/images/'
 # DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
 
 # AWS CONFIG
-DEFAULT_FROM_EMAIL = 'itvdn.django2@gmail.com'
+DEFAULT_FROM_EMAIL = "itvdn.django2@gmail.com"
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'email-smtp.us-east-2.amazonaws.com'
-EMAIL_HOST_USER = 'AKIA5ZT43BP5LNAO3QTY'
-EMAIL_HOST_PASSWORD = 'BFzrmpzbO6qEQc3yP8hcSYD5f2f/E8R/MBLxk6YEcQq6'
+EMAIL_HOST = "email-smtp.us-east-2.amazonaws.com"
+EMAIL_HOST_USER = "AKIA5ZT43BP5LNAO3QTY"
+EMAIL_HOST_PASSWORD = "BFzrmpzbO6qEQc3yP8hcSYD5f2f/E8R/MBLxk6YEcQq6"
 
 # MAILCHIMP CONFIG
 MAILCHIMP_API_KEY = "c68cc4d896d760c468d62de88ab0c940-us7"

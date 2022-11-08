@@ -1,7 +1,7 @@
 # в глобальной области видимости становится доступным имя cbr_api
-from api import cbr_api
-
 import importlib
+
+from api import cbr_api
 
 # создается переменная cbr_api_dynamic, ее тип - модуль
 cbr_api_dynamic = importlib.import_module("api.cbr_api")

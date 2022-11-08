@@ -2,11 +2,11 @@
 # Author: pythontoday
 # YouTube: https://www.youtube.com/c/PythonToday/videos
 
+import json
+
 import requests
 from bs4 import BeautifulSoup
 from proxy_auth import proxies
-import json
-
 
 headers = {
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
@@ -51,13 +51,17 @@ for url in fests_urls_list:
 
         fest_name = fest_info_block.find("h1").text.strip()
         fest_date = fest_info_block.find("h3").text.strip()
-        fest_location_url = "https://www.skiddle.com" + fest_info_block.find("a", class_="tc-white").get("href")
+        fest_location_url = "https://www.skiddle.com" + fest_info_block.find(
+            "a", class_="tc-white"
+        ).get("href")
 
         # get contact details and info
         req = requests.get(url=fest_location_url, headers=headers)
         soup = BeautifulSoup(req.text, "lxml")
 
-        contact_details = soup.find("h2", string="Venue contact details and info").find_next()
+        contact_details = soup.find(
+            "h2", string="Venue contact details and info"
+        ).find_next()
         items = [item.text for item in contact_details.find_all("p")]
 
         contact_details_dict = {}
@@ -65,16 +69,21 @@ for url in fests_urls_list:
             contact_detail_list = contact_detail.split(":")
 
             if len(contact_detail_list) == 3:
-                contact_details_dict[contact_detail_list[0].strip()] = contact_detail_list[1].strip() + ":"\
-                                                                       + contact_detail_list[2].strip()
+                contact_details_dict[contact_detail_list[0].strip()] = (
+                    contact_detail_list[1].strip()
+                    + ":"
+                    + contact_detail_list[2].strip()
+                )
             else:
-                contact_details_dict[contact_detail_list[0].strip()] = contact_detail_list[1].strip()
+                contact_details_dict[
+                    contact_detail_list[0].strip()
+                ] = contact_detail_list[1].strip()
 
         fest_list_result.append(
             {
                 "Fest name": fest_name,
                 "Fest date": fest_date,
-                "Contacts data": contact_details_dict
+                "Contacts data": contact_details_dict,
             }
         )
 

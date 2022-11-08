@@ -1,10 +1,8 @@
 import xml.etree.ElementTree as ET
 
 import requests
-
+from config import LOGGER_CONFIG, logging
 from models import XRate, peewee_datetime
-from config import logging, LOGGER_CONFIG
-
 
 log = logging.getLogger("CbrApi")
 fh = logging.FileHandler(LOGGER_CONFIG["file"])
@@ -16,8 +14,11 @@ log.setLevel(LOGGER_CONFIG["level"])
 
 def update_xrates(from_currency, to_currency):
     log.info("Started update for: %s=>%s" % (from_currency, to_currency))
-    xrate = XRate.select().where(XRate.from_currency == from_currency,
-                                 XRate.to_currency == to_currency).first()
+    xrate = (
+        XRate.select()
+        .where(XRate.from_currency == from_currency, XRate.to_currency == to_currency)
+        .first()
+    )
 
     log.debug("rate before: %s", xrate)
     xrate.rate = get_cbr_rate(from_currency)
@@ -29,7 +30,9 @@ def update_xrates(from_currency, to_currency):
 
 
 def get_cbr_rate(from_currency):
-    response = requests.get("https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
+    response = requests.get(
+        "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11"
+    )
     log.debug("response.encoding: %s" % response.encoding)
     response_text = response.text
     log.debug("response.text: %s" % response_text)
@@ -43,7 +46,7 @@ def find_usd_rate(response_text):
     valutes = root.findall("Valute")
 
     for valute in valutes:
-        if valute.find('CharCode').text == "USD":
+        if valute.find("CharCode").text == "USD":
             return float(valute.find("Value").text.replace(",", "."))
 
     raise ValueError("Invalid Cbr response: USD not found")

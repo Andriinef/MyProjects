@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('chat', '0002_auto_20210329_2308'),
+        ("chat", "0002_auto_20210329_2308"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='room',
-            name='dislikes',
+            model_name="room",
+            name="dislikes",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='room',
-            name='likes',
+            model_name="room",
+            name="likes",
             field=models.PositiveIntegerField(default=0),
         ),
     ]

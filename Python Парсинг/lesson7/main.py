@@ -6,9 +6,10 @@ import csv
 import json
 import os
 import time
+from datetime import datetime
+
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
 
 
 def get_all_pages():
@@ -16,7 +17,10 @@ def get_all_pages():
         "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
     }
 
-    r = requests.get(url="https://shop.casio.ru/catalog/g-shock/filter/gender-is-male/apply/", headers=headers)
+    r = requests.get(
+        url="https://shop.casio.ru/catalog/g-shock/filter/gender-is-male/apply/",
+        headers=headers,
+    )
 
     if not os.path.exists("data"):
         os.mkdir("data")
@@ -28,7 +32,9 @@ def get_all_pages():
         src = file.read()
 
     soup = BeautifulSoup(src, "lxml")
-    pages_count = int(soup.find("div", class_="bx-pagination-container").find_all("a")[-2].text)
+    pages_count = int(
+        soup.find("div", class_="bx-pagination-container").find_all("a")[-2].text
+    )
 
     for i in range(1, pages_count + 1):
         url = f"https://shop.casio.ru/catalog/g-shock/filter/gender-is-male/apply/?PAGEN_1={i}"
@@ -49,13 +55,7 @@ def collect_data(pages_count):
     with open(f"data_{cur_date}.csv", "w") as file:
         writer = csv.writer(file)
 
-        writer.writerow(
-            (
-                "Артикул",
-                "Ссылка",
-                "Цена"
-            )
-        )
+        writer.writerow(("Артикул", "Ссылка", "Цена"))
 
     data = []
     for page in range(1, pages_count):
@@ -66,8 +66,12 @@ def collect_data(pages_count):
         items_cards = soup.find_all("a", class_="product-item__link")
 
         for item in items_cards:
-            product_article = item.find("p", class_="product-item__articul").text.strip()
-            product_price = item.find("p", class_="product-item__price").text.lstrip("руб. ")
+            product_article = item.find(
+                "p", class_="product-item__articul"
+            ).text.strip()
+            product_price = item.find("p", class_="product-item__price").text.lstrip(
+                "руб. "
+            )
             product_url = f'https://shop.casio.ru{item.get("href")}'
 
             # print(f"Article: {product_article} - Price: {product_price} - URL: {product_url}")
@@ -76,20 +80,14 @@ def collect_data(pages_count):
                 {
                     "product_article": product_article,
                     "product_url": product_url,
-                    "product_price": product_price
+                    "product_price": product_price,
                 }
             )
 
             with open(f"data_{cur_date}.csv", "a") as file:
                 writer = csv.writer(file)
 
-                writer.writerow(
-                    (
-                        product_article,
-                        product_url,
-                        product_price
-                    )
-                )
+                writer.writerow((product_article, product_url, product_price))
 
         print(f"[INFO] Обработана страница {page}/5")
 
@@ -102,5 +100,5 @@ def main():
     collect_data(pages_count=pages_count)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

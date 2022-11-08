@@ -14,15 +14,15 @@ arr = []
 for i in range(30):
     x = int(random.random() * 100)
     arr.append(x)
-    print("%3d" % x, end='')
+    print("%3d" % x, end="")
     # Переход на новую строку
     # после каждого пятого элемента.
     if (i + 1) % 5 == 0:
         print()
 
 # Нижняя и верхняя границы диапазона
-minimum = int(input('Min: '))
-maximum = int(input('Max: '))
+minimum = int(input("Min: "))
+maximum = int(input("Max: "))
 
 # Количество элементов, попавших в диапазон
 counter = 0

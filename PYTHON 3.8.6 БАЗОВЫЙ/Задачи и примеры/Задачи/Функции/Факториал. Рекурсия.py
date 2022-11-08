@@ -21,7 +21,7 @@ def factorial(a):
     # 3) return 1
     # 2) return 2 * 1
     # 1) return 3 * 2
-    return a * factorial(a-1)
+    return a * factorial(a - 1)
 
 
 n = int(input())

@@ -36,7 +36,7 @@ class System:
         # формируется строка с данными
         s = self.star.name + ": " + self.star.type
         for i in self.planets:
-            s += '\n' + i.name
+            s += "\n" + i.name
         # метод должен возвращать строку
         return s
 

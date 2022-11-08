@@ -1,11 +1,11 @@
+import asyncio
+import csv
+import datetime
 import json
 import time
-from bs4 import BeautifulSoup
-import datetime
-import csv
-import asyncio
-import aiohttp
 
+import aiohttp
+from bs4 import BeautifulSoup
 
 books_data = []
 start_time = time.time()
@@ -14,7 +14,7 @@ start_time = time.time()
 async def get_page_data(session, page):
     headers = {
         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36",
     }
 
     url = f"https://www.labirint.ru/genres/2308/?available=1&paperbooks=1&display=table&page={page}"
@@ -46,17 +46,31 @@ async def get_page_data(session, page):
                 book_publishing = "Нет издательства"
 
             try:
-                book_new_price = int(book_data[3].find("div", class_="price").find("span").find("span").text.strip().replace(" ", ""))
+                book_new_price = int(
+                    book_data[3]
+                    .find("div", class_="price")
+                    .find("span")
+                    .find("span")
+                    .text.strip()
+                    .replace(" ", "")
+                )
             except:
                 book_new_price = "Нет нового прайса"
 
             try:
-                book_old_price = int(book_data[3].find("span", class_="price-gray").text.strip().replace(" ", ""))
+                book_old_price = int(
+                    book_data[3]
+                    .find("span", class_="price-gray")
+                    .text.strip()
+                    .replace(" ", "")
+                )
             except:
                 book_old_price = "Нет старого прайса"
 
             try:
-                book_sale = round(((book_old_price - book_new_price) / book_old_price) * 100)
+                book_sale = round(
+                    ((book_old_price - book_new_price) / book_old_price) * 100
+                )
             except:
                 book_sale = "Нет скидки"
 
@@ -73,7 +87,7 @@ async def get_page_data(session, page):
                     "book_new_price": book_new_price,
                     "book_old_price": book_old_price,
                     "book_sale": book_sale,
-                    "book_status": book_status
+                    "book_status": book_status,
                 }
             )
 
@@ -83,7 +97,7 @@ async def get_page_data(session, page):
 async def gather_data():
     headers = {
         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36",
     }
 
     url = "https://www.labirint.ru/genres/2308/?available=1&paperbooks=1&display=table"
@@ -91,7 +105,9 @@ async def gather_data():
     async with aiohttp.ClientSession() as session:
         response = await session.get(url=url, headers=headers)
         soup = BeautifulSoup(await response.text(), "lxml")
-        pages_count = int(soup.find("div", class_="pagination-numbers").find_all("a")[-1].text)
+        pages_count = int(
+            soup.find("div", class_="pagination-numbers").find_all("a")[-1].text
+        )
 
         tasks = []
 
@@ -120,7 +136,7 @@ def main():
                 "Цена со скидкой",
                 "Цена без скидки",
                 "Процент скидки",
-                "Наличие на складе"
+                "Наличие на складе",
             )
         )
 
@@ -137,7 +153,7 @@ def main():
                     book["book_new_price"],
                     book["book_old_price"],
                     book["book_sale"],
-                    book["book_status"]
+                    book["book_status"],
                 )
             )
 

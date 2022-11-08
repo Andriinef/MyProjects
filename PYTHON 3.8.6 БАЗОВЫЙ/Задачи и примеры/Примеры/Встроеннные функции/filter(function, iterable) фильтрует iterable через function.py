@@ -1,9 +1,9 @@
 """ filter(function, iterable) фильтрует
     iterable через function
 """
-a = ['one', '', 'three', '', 'five', 'six']
+a = ["one", "", "three", "", "five", "six"]
 
-print('---1---')
+print("---1---")
 
 # Функция filter() создаёт объект-итератор,
 # в который попадают все элементы из переданного
@@ -16,7 +16,7 @@ b = filter(None, a)
 for i in b:
     print(i)
 
-print('---2---')
+print("---2---")
 
 
 def big_len(s):
@@ -27,7 +27,7 @@ b = filter(big_len, a)
 for i in b:
     print(i)
 
-print('---3---')
+print("---3---")
 
 # чаще в filter() вместо обычной функции
 # передают lambda-выражение

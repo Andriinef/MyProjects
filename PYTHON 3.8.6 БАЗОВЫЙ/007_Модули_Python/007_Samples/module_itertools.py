@@ -13,4 +13,3 @@ print(list(itertools.accumulate([1, 2, 3, 4, 5])))
 print(list(itertools.accumulate([1, 2, 3, 4, 5], lambda a, b: a - b)))
 
 print(list(itertools.filterfalse(lambda x: x % 2, range(11))))
-

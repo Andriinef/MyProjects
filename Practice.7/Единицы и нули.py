@@ -5,7 +5,7 @@ from codewars_test import assert_equals
 
 
 def binary_array_to_number(arr):
-    return int(''.join(map(str, arr)), base=2)
+    return int("".join(map(str, arr)), base=2)
 
 
 test0 = assert_equals(binary_array_to_number([0, 0, 0, 1]), 1)

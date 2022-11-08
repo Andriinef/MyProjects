@@ -1,6 +1,6 @@
-from typing import TypeVar, List, Tuple, Sequence, Iterable
+from typing import Iterable, List, Sequence, Tuple, TypeVar
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 def copy_list(sequence: Iterable[Tuple[str, T]]) -> List[T]:
@@ -11,9 +11,9 @@ def copy_list(sequence: Iterable[Tuple[str, T]]) -> List[T]:
 
 
 test_data = [
-    ('1', 10),
-    ('1', 10),
-    ('1', '1'),
+    ("1", 10),
+    ("1", 10),
+    ("1", "1"),
 ]
 
 test_value0 = copy_list(test_data)

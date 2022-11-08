@@ -15,7 +15,6 @@ class Block:
 
 # дочерний класс от Block
 class ColorBlock(Block):
-
     def __init__(self, width, length, height, color):
         # Вызывается конструктор родительского класса.
         # Там будут созданы три поля объекта.

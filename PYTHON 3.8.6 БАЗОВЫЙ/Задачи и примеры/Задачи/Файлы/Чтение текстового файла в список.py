@@ -25,7 +25,7 @@ print(data)
 # Избавляемся от символа перехода
 # на новую строку.
 for i in range(len(data)):
-    if data[i][-1] == '\n':
+    if data[i][-1] == "\n":
         data[i] = data[i][:-1]
 
 

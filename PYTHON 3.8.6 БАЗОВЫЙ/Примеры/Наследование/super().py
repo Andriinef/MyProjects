@@ -1,5 +1,5 @@
 class Geom:
-    name = 'Geom'
+    name = "Geom"
 
     def __init__(self, x1, y1, x2, y2):
         print(f"Geom {self.__class__}")
@@ -13,7 +13,7 @@ class Geom:
 
 
 class Line(Geom):
-    name = 'Line'
+    name = "Line"
 
     def draw(self):
         print("Line")

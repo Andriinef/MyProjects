@@ -1,21 +1,15 @@
 user = {
     "name": "JohnDoe",
     "info": {
-        "basic": {
-            "age": 25,
-            "salary": 5000
-        },
-        "additional": {
-            "study": "mathematics",
-            "family": "married"
-        },
+        "basic": {"age": 25, "salary": 5000},
+        "additional": {"study": "mathematics", "family": "married"},
         "special": {
             "projects": [
                 {"name": "quantum_computer", "stage": "in_progress"},
-                {"name": "laser_gun", "stage": "in_production"}
+                {"name": "laser_gun", "stage": "in_production"},
             ]
-        }
-    }
+        },
+    },
 }
 
 
@@ -32,5 +26,5 @@ def get_data_rec(data_dict, keys, index=0):
     return data_dict
 
 
-print(get_data(user, ['info', 'special', 'projects', 0, 'name']))
-print(get_data_rec(user, ['info', 'special', 'projects', 0, 'name']))
+print(get_data(user, ["info", "special", "projects", 0, "name"]))
+print(get_data_rec(user, ["info", "special", "projects", 0, "name"]))

@@ -1,6 +1,6 @@
 class TextProcessor:
     def __init__(self):
-        self._punktuation = '.,!?;:*'
+        self._punktuation = ".,!?;:*"
 
     def __is_punktuation(self, char):
         return char in self._punktuation
@@ -42,5 +42,5 @@ class DataInterface:
 
 
 di = DataInterface()
-t = ['Hello, I am John *', 'Hey, what is the weather today ?']
+t = ["Hello, I am John *", "Hey, what is the weather today ?"]
 ct = di.process_texts(t)

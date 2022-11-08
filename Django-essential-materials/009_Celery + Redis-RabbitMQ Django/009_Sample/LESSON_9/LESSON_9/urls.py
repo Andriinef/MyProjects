@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from wsgi_celery.views import GenerateBotView, BotsListView
+from wsgi_celery.views import BotsListView, GenerateBotView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('generate/', GenerateBotView.as_view(), name='generate'),
-    path('bots-list/', BotsListView.as_view(), name='bots_list'),
+    path("admin/", admin.site.urls),
+    path("generate/", GenerateBotView.as_view(), name="generate"),
+    path("bots-list/", BotsListView.as_view(), name="bots_list"),
 ]

@@ -11,5 +11,5 @@ class Human:
         return self.age, self.get_name()
 
 
-human_1 = Human(age=25, name='John', gender='male')
+human_1 = Human(age=25, name="John", gender="male")
 print(human_1.get_age_and_name())

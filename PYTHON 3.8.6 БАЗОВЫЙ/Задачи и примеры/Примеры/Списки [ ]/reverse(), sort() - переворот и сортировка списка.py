@@ -17,8 +17,10 @@ print(b, "origin")
 b.sort()
 print(b, "sort by first item")
 
+
 def item_two_of_tuple(t):
     return t[1]
+
 
 b.sort(key=item_two_of_tuple)
 print(b, "sort by second item")

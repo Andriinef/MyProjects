@@ -1,11 +1,11 @@
 from datetime import datetime
 
-from flask import render_template, make_response, jsonify, request, redirect, url_for
-import xmltodict
-
-from models import XRate, ApiLog
 import api
+import xmltodict
 from app import app
+from flask import (jsonify, make_response, redirect, render_template, request,
+                   url_for)
+from models import ApiLog, XRate
 
 
 class BaseController:
@@ -53,12 +53,27 @@ class GetApiRates(BaseController):
         return xrates
 
     def _get_xml(self, xrates):
-        d = {"xrates": {"xrate": [
-            {"from": rate.from_currency, "to": rate.to_currency, "rate": rate.rate} for rate in xrates]}}
-        return make_response(xmltodict.unparse(d), {'Content-Type': 'text/xml'})
+        d = {
+            "xrates": {
+                "xrate": [
+                    {
+                        "from": rate.from_currency,
+                        "to": rate.to_currency,
+                        "rate": rate.rate,
+                    }
+                    for rate in xrates
+                ]
+            }
+        }
+        return make_response(xmltodict.unparse(d), {"Content-Type": "text/xml"})
 
     def _get_json(self, xrates):
-        return jsonify([{"from": rate.from_currency, "to": rate.to_currency, "rate": rate.rate} for rate in xrates])
+        return jsonify(
+            [
+                {"from": rate.from_currency, "to": rate.to_currency, "rate": rate.rate}
+                for rate in xrates
+            ]
+        )
 
 
 class UpdateRates(BaseController):
@@ -71,7 +86,7 @@ class UpdateRates(BaseController):
 
         else:
             raise ValueError("from_currency and to_currency")
-        return redirect(url_for('view_rates'))
+        return redirect(url_for("view_rates"))
 
     def _update_rate(self, from_currency, to_currency):
         api.update_rate(from_currency, to_currency)
@@ -95,7 +110,9 @@ class ViewLogs(BaseController):
 class EditRate(BaseController):
     def _call(self, from_currency, to_currency):
         if self.request.method == "GET":
-            return render_template("rate_edit.html", from_currency=from_currency, to_currency=to_currency)
+            return render_template(
+                "rate_edit.html", from_currency=from_currency, to_currency=to_currency
+            )
 
         # POST request is got
         print(request.form)
@@ -105,9 +122,18 @@ class EditRate(BaseController):
         if not request.form["new_rate"]:
             raise Exception("new_rate must be not empty")
 
-        upd_count = (XRate.update({XRate.rate: float(request.form["new_rate"]), XRate.updated: datetime.now()})
-                          .where(XRate.from_currency == from_currency,
-                                 XRate.to_currency == to_currency).execute())
+        upd_count = (
+            XRate.update(
+                {
+                    XRate.rate: float(request.form["new_rate"]),
+                    XRate.updated: datetime.now(),
+                }
+            )
+            .where(
+                XRate.from_currency == from_currency, XRate.to_currency == to_currency
+            )
+            .execute()
+        )
 
         print("upd_count", upd_count)
-        return redirect(url_for('view_rates'))
+        return redirect(url_for("view_rates"))

@@ -1,12 +1,11 @@
 from django.contrib.auth import login
+from issues.models import Issue
+from issues.serializers import IssueSerializer, LoginSerializer
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from rest_framework.views import View
-
-from issues.models import Issue
-from issues.serializers import IssueSerializer, LoginSerializer
+from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
 
 class IssueModelViewSet(ModelViewSet):
@@ -21,14 +20,14 @@ class AuthView(GenericViewSet):
 
     serializer_class = LoginSerializer
 
-    @action(detail=False, serializer_class=LoginSerializer, methods=['post'])
+    @action(detail=False, serializer_class=LoginSerializer, methods=["post"])
     def login(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=self.request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
         login(request, user)
-        return Response({'details': 'You successfully logged in'})
+        return Response({"details": "You successfully logged in"})
 
     @action(detail=False, serializer_class=None)
     def logout(self):
-        return Response({'details': 'You successfully logged out'})
+        return Response({"details": "You successfully logged out"})

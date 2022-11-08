@@ -4,7 +4,7 @@ from src import db
 
 
 class Film(db.Model):
-    __tablename__ = 'films'
+    __tablename__ = "films"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
@@ -15,7 +15,9 @@ class Film(db.Model):
     length = db.Column(db.Float)
     rating = db.Column(db.Float)
 
-    def __init__(self, title, release_date, description, distributed_by, length, rating):
+    def __init__(
+        self, title, release_date, description, distributed_by, length, rating
+    ):
         self.title = title
         self.release_date = release_date
         self.uuid = str(uuid.uuid4())
@@ -25,11 +27,11 @@ class Film(db.Model):
         self.rating = rating
 
     def __repr__(self):
-        return f'Film({self.title}, {self.release_date}, {self.uuid}, {self.distributed_by}'
+        return f"Film({self.title}, {self.release_date}, {self.uuid}, {self.distributed_by}"
 
 
 class Actor(db.Model):
-    __tablename__ = 'actors'
+    __tablename__ = "actors"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, nullable=False)
@@ -37,4 +39,4 @@ class Actor(db.Model):
     is_active = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
-        return f'Actor({self.name}, {self.birthday})'
+        return f"Actor({self.name}, {self.birthday})"

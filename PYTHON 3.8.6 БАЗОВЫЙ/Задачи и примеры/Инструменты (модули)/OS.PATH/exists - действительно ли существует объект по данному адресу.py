@@ -7,16 +7,16 @@ from os.path import exists
 # path ссылается на существующий путь
 # или дескриптор открытого файла
 
-a = 'desc.txt'
+a = "desc.txt"
 print(exists(a))
 
-a = 'test.txt'
+a = "test.txt"
 print(exists(a))
 
-a = '/boot/grub/'
+a = "/boot/grub/"
 print(exists(a))
 
-a = '/home/user/'
+a = "/home/user/"
 print(exists(a))
 # True
 # False

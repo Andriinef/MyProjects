@@ -3,6 +3,7 @@
 # YouTube: https://www.youtube.com/c/PythonToday/videos
 
 import re
+
 from bs4 import BeautifulSoup
 
 with open("blank/index.html") as file:

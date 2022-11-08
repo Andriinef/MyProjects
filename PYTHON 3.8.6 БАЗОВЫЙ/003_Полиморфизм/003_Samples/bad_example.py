@@ -8,11 +8,11 @@ class Messenger:
 
 class ExtendedMessenger(Messenger):  # Bad example !
     def send_message(self, text, option=None):
-        if option == 'message':
+        if option == "message":
             self._connection.send(text)
-        elif option == 'image':
+        elif option == "image":
             self._connection.send(text)
-        elif option == 'math':
-            print('2+2=4')
+        elif option == "math":
+            print("2+2=4")
         else:
-            print('...')
+            print("...")

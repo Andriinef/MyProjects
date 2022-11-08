@@ -14,4 +14,4 @@ def create_new_user(first_name: str, last_name: str) -> User:
     return User(first_name=first_name, last_name=last_name)
 
 
-user: User = create_new_user('Eugene', '10')
+user: User = create_new_user("Eugene", "10")

@@ -24,12 +24,12 @@ def fib_row(item):
     """Функция выводит элементы ряда Фибоначчи.
     Их количество равно 'item'."""
     f1 = f2 = 1
-    print(f1, f2, end=' ')
+    print(f1, f2, end=" ")
     while item > 2:
         buff = f2
         f2 = f1 + f2
         f1 = buff
-        print(f2, end=' ')
+        print(f2, end=" ")
         item -= 1
     print()
 

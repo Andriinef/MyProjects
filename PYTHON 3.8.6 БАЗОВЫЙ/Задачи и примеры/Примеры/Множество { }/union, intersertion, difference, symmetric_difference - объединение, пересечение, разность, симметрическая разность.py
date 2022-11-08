@@ -4,31 +4,31 @@
 """
 a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
-print(a, '- a')
-print(b, '- b')
+print(a, "- a")
+print(b, "- b")
 
 # Результат содержит элементы
 # всех множеств.
 print(a.union(b))
 # Вместо метода может использоваться
 # специальный оператор.
-print(a | b, 'union')
+print(a | b, "union")
 
 # В результат попадают элементы,
 # которые есть в обоих множествах.
 print(a.intersection(b))
-print(a & b, 'intersection')
+print(a & b, "intersection")
 
 print(a.difference(b))
 # Те, которые есть в 'a',
 # но которых нет в 'b'.
-print(a - b, 'difference: a - b')
+print(a - b, "difference: a - b")
 # Те, которые есть в 'b', но не в 'a'.
-print(b - a, 'difference: b - a')
+print(b - a, "difference: b - a")
 
 # Исключаются совпадающие элементы.
 print(a.symmetric_difference(b))
-print(a ^ b, 'symmetric difference')
+print(a ^ b, "symmetric difference")
 # {1, 2, 3, 4} - a
 # {3, 4, 5, 6} - b
 # {1, 2, 3, 4, 5, 6}

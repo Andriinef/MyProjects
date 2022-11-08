@@ -5,7 +5,7 @@
 """
 
 # режим 'w' открывает файл на запись
-f = open("newfile.txt", 'w')
+f = open("newfile.txt", "w")
 
 # метод write() записывает строку
 f.write("One")

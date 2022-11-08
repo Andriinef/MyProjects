@@ -17,13 +17,15 @@ def main():
     pool = multiprocessing.Pool()
     tasks = []
     for n in range(1, cpu_count + 1):
-        task = pool.apply_async(do_math, args=(30_000_000 * (n - 1) / cpu_count, 30_000_000 * n / cpu_count))
+        task = pool.apply_async(
+            do_math, args=(30_000_000 * (n - 1) / cpu_count, 30_000_000 * n / cpu_count)
+        )
         tasks.append(task)
     pool.close()
     pool.join()
 
     dt = datetime.datetime.now() - t0
-    print(f'Done in {dt.total_seconds()}')
+    print(f"Done in {dt.total_seconds()}")
     for t in tasks:
         print(t.get())
 
@@ -39,5 +41,5 @@ def do_math(start=0, num=10):
     return int(ave)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

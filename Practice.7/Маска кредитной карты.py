@@ -13,7 +13,7 @@ from codewars_test import assert_equals
 def maskify(cc):
     result = ""
     if len(cc) > 4:
-        result += '#' * (len(cc) - 4)
+        result += "#" * (len(cc) - 4)
     result += cc[-4:]
     return result
 
@@ -21,6 +21,6 @@ def maskify(cc):
     # return len(cc[:-4]) * "#" + cc[-4:]
 
 
-test = assert_equals(maskify(''), '')
-test1 = assert_equals(maskify('123'), '123')
-test2 = assert_equals(maskify('SF$SDfgsd2eA'), '########d2eA')
+test = assert_equals(maskify(""), "")
+test1 = assert_equals(maskify("123"), "123")
+test2 = assert_equals(maskify("SF$SDfgsd2eA"), "########d2eA")

@@ -3,26 +3,26 @@ from gevent.event import Event
 
 
 def waiter():
-    print('I am waiting for event')
+    print("I am waiting for event")
     # ожидание события с блокировкой дальнейшего исполнения кода функции
     event.wait()
-    print('Waiter done')
+    print("Waiter done")
 
 
 def emitter():
-    print('Emitter is sleeping')
+    print("Emitter is sleeping")
     # засыпаем на 3 секунды
     gevent.sleep(3)
     # устанавливаем событие
     event.set()
-    print('I kill endless task!')
+    print("I kill endless task!")
     # останавливаем бесконечный greenlet принудилеьно
     endless_task.kill()
 
 
 def endless():
     while True:
-        print('Endless Task will be working forever!')
+        print("Endless Task will be working forever!")
         gevent.sleep(2)
 
 

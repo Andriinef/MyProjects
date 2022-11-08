@@ -3,20 +3,20 @@ import json
 import requests
 from requests.adapters import HTTPAdapter
 
-HOST = '127.0.0.1:8000'
+HOST = "127.0.0.1:8000"
 
 
 def get_url(path):
-    return 'http://{host}{path}'.format(host=HOST, path=path)
+    return "http://{host}{path}".format(host=HOST, path=path)
 
 
-issues_url = get_url('/api/issues/')
-login_url = get_url('/api/auth/login/')
-logout_url = get_url('/api/auth/logout/')
+issues_url = get_url("/api/issues/")
+login_url = get_url("/api/auth/login/")
+logout_url = get_url("/api/auth/logout/")
 
 
 def issue_url(pk):
-    return get_url('/api/issues/{id}/'.format(id=pk))
+    return get_url("/api/issues/{id}/".format(id=pk))
 
 
 # get issues (error)
@@ -29,8 +29,8 @@ print(response.json())
 
 # попытка авторизоваться, используя уже имеющиеся login/password
 # test_user/test_pass уже созданы, поэтому мы можем их использовать.
-data = {'username': 'test_user', 'password': 'test_pass'}
-headers = {'Content-Type': 'application/json'}
+data = {"username": "test_user", "password": "test_pass"}
+headers = {"Content-Type": "application/json"}
 # выполняем запрос и проверяем ответ- мы авторизованы, в случае корректных
 # username, password
 response = requests.post(login_url, data=json.dumps(data), headers=headers)
@@ -59,28 +59,34 @@ print(response.status_code)
 print(response.json())
 
 # подготавливаем данные для отправки на сервер
-issue_data = {'name': 'Buy Python Book',
-              'due_date': '2009-02-11',
-              'description': 'We have to buy a Python book!!!'}
+issue_data = {
+    "name": "Buy Python Book",
+    "due_date": "2009-02-11",
+    "description": "We have to buy a Python book!!!",
+}
 
 # создаем заметку на сервере.
-response = requests.post(issues_url, data=json.dumps(issue_data),
-                         headers=headers, cookies=cookies)
+response = requests.post(
+    issues_url, data=json.dumps(issue_data), headers=headers, cookies=cookies
+)
 # собираем данные из ответа сервера в dict, использую метод `resp.json()`
 created_issue = response.json()
 print(response.status_code)
 print(created_issue)
 
 # обновление имени заметки, без изменения других полей, используем меод PATCH
-new_data = {'name': 'Fixed name'}
-response = requests.patch(issue_url(created_issue['id']),
-                          data=json.dumps(new_data), headers=headers,
-                          cookies=cookies)
+new_data = {"name": "Fixed name"}
+response = requests.patch(
+    issue_url(created_issue["id"]),
+    data=json.dumps(new_data),
+    headers=headers,
+    cookies=cookies,
+)
 print(response.status_code)
 print(response.json())
 
 # удаление заметки с сервера по её `id`.
-response = requests.delete(issue_url(created_issue['id']), cookies=cookies)
+response = requests.delete(issue_url(created_issue["id"]), cookies=cookies)
 print(response.status_code)
 # print(response.json())
 
@@ -90,8 +96,8 @@ print(response.status_code)
 # cookies автоматически будут прокидываться при каждом запросе.
 
 # авторизуемся и пытаемся проделать всё те же действия, но с request.Session.
-data = {'username': 'test_user', 'password': 'test_pass'}
-headers = {'Content-Type': 'application/json'}
+data = {"username": "test_user", "password": "test_pass"}
+headers = {"Content-Type": "application/json"}
 # создаем экземпляр `Session`
 session = requests.Session()
 
@@ -137,5 +143,5 @@ print(response.json())
 adapter = HTTPAdapter(pool_maxsize=10, pool_block=True, pool_connections=10)
 session = requests.Session()
 # для https кешируем соединения
-session.mount('http://', adapter=adapter)
+session.mount("http://", adapter=adapter)
 session.post(issues_url)

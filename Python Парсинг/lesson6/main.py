@@ -3,6 +3,7 @@
 # YouTube: https://www.youtube.com/c/PythonToday/videos
 
 import time
+
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -15,7 +16,7 @@ def get_data(url):
         "Accept-Language": "en",
         "Cache-Control": "max-age=0",
         "Connection": "keep-alive",
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36",
     }
 
     r = requests.get(url=url, headers=headers)
@@ -24,7 +25,9 @@ def get_data(url):
         file.write(r.text)
 
     # get hotels urls
-    r = requests.get("https://api.rsrv.me/hc.php?a=hc&most_id=1317&l=ru&sort=most", headers=headers)
+    r = requests.get(
+        "https://api.rsrv.me/hc.php?a=hc&most_id=1317&l=ru&sort=most", headers=headers
+    )
     soup = BeautifulSoup(r.text, "lxml")
 
     hotels_cards = soup.find_all("div", class_="hotel_card_dv")
@@ -36,7 +39,10 @@ def get_data(url):
 
 def get_data_with_selenium(url):
     options = webdriver.FirefoxOptions()
-    options.set_preference("general.useragent.override", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36")
+    options.set_preference(
+        "general.useragent.override",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36",
+    )
 
     # try:
     #     driver = webdriver.Firefox(
@@ -73,5 +79,5 @@ def main():
     get_data_with_selenium("https://www.tury.ru/hotel/most_luxe.php")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

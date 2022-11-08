@@ -50,7 +50,7 @@ for i in range(N):
 for i in range(N):
     print(matrix[i], " | ", row_sums[i])
 
-print('-' * M * 4)
+print("-" * M * 4)
 
 # выводится список сумм столбцов
 print(col_sums)

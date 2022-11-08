@@ -14,10 +14,10 @@ from codewars_test import assert_equals
 
 
 def printer_error(s):
-    result = ''
+    result = ""
     counter = 0
     for letter in s:
-        if letter > 'm':
+        if letter > "m":
             counter += 1
     result += f"{counter}/{len(s)}"
     return result

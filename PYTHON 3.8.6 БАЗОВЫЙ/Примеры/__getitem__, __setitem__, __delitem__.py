@@ -10,12 +10,12 @@ class Student:
             raise IndexError("Index...")
 
     def __setitem__(self, key, value):
-        if not isinstance(key,int) or key < 0:
+        if not isinstance(key, int) or key < 0:
             raise TypeError("Index int and >0")
 
         if key >= len(self.marks):
             off = key + 1 - len(self.marks)
-            self.marks.extend([None]*off)
+            self.marks.extend([None] * off)
         self.marks[key] = value
 
     def __delitem__(self, key):

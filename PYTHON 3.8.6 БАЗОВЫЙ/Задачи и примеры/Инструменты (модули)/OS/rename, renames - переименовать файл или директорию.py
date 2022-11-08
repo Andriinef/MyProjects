@@ -7,17 +7,17 @@ print(os.listdir())
 # одну директорию по указанному адресу.
 # Первый аргумент - исходное имя,
 # второй - новое.
-os.rename('test.txt', 'hello.txt')
+os.rename("test.txt", "hello.txt")
 print(os.listdir())
 
-os.makedirs('pics/land')
+os.makedirs("pics/land")
 print(os.listdir())
-print(os.listdir('pics'))
+print(os.listdir("pics"))
 # Если требуется переименовать путь,
 # используется функция renames().
-os.renames('pics/land', 'imgs/grass')
+os.renames("pics/land", "imgs/grass")
 print(os.listdir())
-print(os.listdir('imgs'))
+print(os.listdir("imgs"))
 # ['test.txt']
 # ['hello.txt']
 # ['hello.txt', 'pics']

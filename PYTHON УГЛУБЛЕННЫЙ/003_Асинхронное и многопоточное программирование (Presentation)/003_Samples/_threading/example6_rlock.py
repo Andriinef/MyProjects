@@ -3,13 +3,13 @@ import threading
 
 
 def producer():
-    print('Set locking')
+    print("Set locking")
     with lock:
         # поток, взявший блокировку может взять её бесконечное количество раз.
         # но другой поток будет ждать
         with lock:
             print("It's great")
-    print('Locking release!')
+    print("Locking release!")
 
 
 # пример аналогичен example5_lock.py, но решает проблему DEAD LOCK в рамках

@@ -21,7 +21,7 @@ try_count = 1
 # не совпадает с тем,
 # которое вводит пользователь,
 while secret_num != user_num:
-    print("%d try: " % try_count, end='')
+    print("%d try: " % try_count, end="")
     # будем запрашивать очередное
     # число от пользователя.
     user_num = int(input())

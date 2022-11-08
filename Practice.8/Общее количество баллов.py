@@ -7,7 +7,7 @@ from codewars_test import assert_equals
 def points(games):
     counter = 0
     for i in games:
-        scores_str = i.split(':')
+        scores_str = i.split(":")
         first_score = int(scores_str[0])
         second_score = int(scores_str[1])
 
@@ -29,8 +29,18 @@ def points(games):
 #     return count
 
 
-test = assert_equals(points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']), 30)
-test1 = assert_equals(points(['1:1', '2:2', '3:3', '4:4', '2:2', '3:3', '4:4', '3:3', '4:4', '4:4']), 10)
-test2 = assert_equals(points(['0:1', '0:2', '0:3', '0:4', '1:2', '1:3', '1:4', '2:3', '2:4', '3:4']), 0)
-test3 = assert_equals(points(['1:0', '2:0', '3:0', '4:0', '2:1', '1:3', '1:4', '2:3', '2:4', '3:4']), 15)
-test4 = assert_equals(points(['1:0', '2:0', '3:0', '4:4', '2:2', '3:3', '1:4', '2:3', '2:4', '3:4']), 12)
+test = assert_equals(
+    points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]), 30
+)
+test1 = assert_equals(
+    points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]), 10
+)
+test2 = assert_equals(
+    points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]), 0
+)
+test3 = assert_equals(
+    points(["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]), 15
+)
+test4 = assert_equals(
+    points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]), 12
+)

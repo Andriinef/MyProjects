@@ -5,6 +5,7 @@
 """
 
 from pydoc import describe
+
 from codewars_test import assert_equals
 
 
@@ -12,7 +13,7 @@ def symmetric_point(p, q):
     # x = 2*q[0] - p[0]
     # y = 2*q[1] - p[1]
     # return [x, y]
-    return [2*q[0] - p[0], 2*q[1] - p[1]]
+    return [2 * q[0] - p[0], 2 * q[1] - p[1]]
 
 
 test = describe("Example Tests")

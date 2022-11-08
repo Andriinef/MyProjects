@@ -1,9 +1,6 @@
 class Car:
     def __init__(self, name):
-        self._speed_name_map = {
-            "BMW": 250,
-            "Mercedes": 350
-        }
+        self._speed_name_map = {"BMW": 250, "Mercedes": 350}
         self._max_speed = self._define_max_speed(name)
 
     def _define_max_speed(self, name):
@@ -20,9 +17,9 @@ class Car:
         return distance / self._max_speed
 
 
-car1 = Car('BMW')
-car2 = Car('Mercedes')
-car3 = Car('ABC')
+car1 = Car("BMW")
+car2 = Car("Mercedes")
+car3 = Car("ABC")
 
 print(car1.distance_on_max_speed(100))
 print(car2.distance_on_max_speed(100))
@@ -47,12 +44,12 @@ class Dog(Animal):
         print("Bark")
 
 
-animal = Animal('?')
+animal = Animal("?")
 animal.voice()
 
-cat = Cat('Sarah')
+cat = Cat("Sarah")
 cat.voice()
-dog = Dog('Rex')
+dog = Dog("Rex")
 dog.voice()
 
 
@@ -61,17 +58,17 @@ class Animal2:
         self._name = name
 
     def voice(self):
-        if self._name == 'cat':
-            print('Meow')
+        if self._name == "cat":
+            print("Meow")
         elif self._name == "dog":
-            print('Bark')
+            print("Bark")
         else:
             print("...")
 
 
-a1 = Animal2('cat')
-a2 = Animal2('dog')
-a3 = Animal2('dinosaur')
+a1 = Animal2("cat")
+a2 = Animal2("dog")
+a3 = Animal2("dinosaur")
 a1.voice()
 a2.voice()
 a3.voice()

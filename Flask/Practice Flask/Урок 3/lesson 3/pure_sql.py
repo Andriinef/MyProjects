@@ -1,7 +1,6 @@
 import sqlite3
 
-
-conn = sqlite3.connect('golden-eye.db')
+conn = sqlite3.connect("golden-eye.db")
 
 cur = conn.cursor()
 

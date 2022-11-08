@@ -9,5 +9,5 @@ print(chr(20049))  # 乑
 
 # ord(c) принимает символ,
 # возвращает его номер в Unicode
-print(ord('Z'))  # 90
-print(ord('乑'))  # 20049
+print(ord("Z"))  # 90
+print(ord("乑"))  # 20049

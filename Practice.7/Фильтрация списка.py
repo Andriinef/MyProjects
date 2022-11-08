@@ -31,7 +31,14 @@ def filter_list(n):
 #     return new_list
 
 
-test0 = assert_equals(filter_list([1, 2, 'a', 'b']), [1, 2], 'For input [1, 2, "a", "b"]')
-test1 = assert_equals(filter_list([1, 'a', 'b', 0, 15]), [1, 0, 15], 'Fot input [1, "a", "b", 0, 15]')
-test3 = assert_equals(filter_list([1, 2, 'aasf', '1', '123', 123]), [1, 2, 123],
-                      'For input [1, 2, "aasf", "1", "123", 123]')
+test0 = assert_equals(
+    filter_list([1, 2, "a", "b"]), [1, 2], 'For input [1, 2, "a", "b"]'
+)
+test1 = assert_equals(
+    filter_list([1, "a", "b", 0, 15]), [1, 0, 15], 'Fot input [1, "a", "b", 0, 15]'
+)
+test3 = assert_equals(
+    filter_list([1, 2, "aasf", "1", "123", 123]),
+    [1, 2, 123],
+    'For input [1, 2, "aasf", "1", "123", 123]',
+)

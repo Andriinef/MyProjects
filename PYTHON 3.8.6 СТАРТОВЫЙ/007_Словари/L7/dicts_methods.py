@@ -1,6 +1,6 @@
-my_dict = {'key': 'value', 10: True, 0.2: "hello"}
+my_dict = {"key": "value", 10: True, 0.2: "hello"}
 print(my_dict)
-print(my_dict.get('key2', -1))
+print(my_dict.get("key2", -1))
 d = {1: 10, 2: 20}
 print(d.items())
 d.clear()

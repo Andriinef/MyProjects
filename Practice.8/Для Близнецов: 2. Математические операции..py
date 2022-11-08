@@ -7,10 +7,10 @@
 
 
 def ice_brick_volume(radius, bottle_length, rim_length):
-    if radius > 0 and bottle_length > 0 and rim_length< bottle_length:
+    if radius > 0 and bottle_length > 0 and rim_length < bottle_length:
         # brick_volume = 2 * radius**2 * (bottle_length - rim_length)
         # return brick_volume
-        return (bottle_length - rim_length) * 2 * radius ** 2
+        return (bottle_length - rim_length) * 2 * radius**2
 
 
 r = (ice_brick_volume(1, 10, 2), 16)

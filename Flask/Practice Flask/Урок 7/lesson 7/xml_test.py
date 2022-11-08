@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
-import xmltodict
 
+import xmltodict
 
 xml_example = """<employees>
     <person ID="1234567">

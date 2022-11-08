@@ -17,15 +17,15 @@ print(z.__next__())  # (1, 11, 21)
 # [(2, 12, 22), (3, 13, 23), (4, 14, 24)]
 print(list(z))
 
-print('--------')
+print("--------")
 
 new_list1 = []
 new_list2 = []
 # zip() используется для обработки разных
 # итерируемых объектов в одном цикле
 for i, j in zip(a, b):
-    new_list1.append(i+1)
-    new_list2.append(j-1)
+    new_list1.append(i + 1)
+    new_list2.append(j - 1)
 
 print(new_list1)
 print(new_list2)

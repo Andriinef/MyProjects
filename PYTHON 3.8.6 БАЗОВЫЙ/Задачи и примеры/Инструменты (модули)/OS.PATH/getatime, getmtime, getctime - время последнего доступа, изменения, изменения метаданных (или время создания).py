@@ -4,7 +4,7 @@
 import os.path
 import time
 
-f = '/home/p/flag.png'
+f = "/home/p/flag.png"
 # getatime(path) возвращает время
 # (количество секунд с начала "эпохи")
 # последнего доступа к path

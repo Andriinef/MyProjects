@@ -3,14 +3,15 @@
 # YouTube: https://www.youtube.com/c/PythonToday/videos
 
 import os
-import requests
+
 import img2pdf
+import requests
 
 
 def get_data():
     headers = {
         "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36",
     }
 
     img_list = []
@@ -50,5 +51,5 @@ def main():
     write_to_pdf()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

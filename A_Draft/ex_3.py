@@ -1,4 +1,4 @@
-class Person():
+class Person:
     def person_info(name, age):
         return name, age
 

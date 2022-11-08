@@ -16,4 +16,3 @@ except ArithmeticError as z:
     print(z)
 except Exception as z:
     print(z)
-

@@ -16,12 +16,10 @@ class HumanExtended(Human):
         self.name = name
 
     def say_hello(self):
-        print("Hello, I am {} and I am {}".format(
-            self.name, self.age
-        ))
+        print("Hello, I am {} and I am {}".format(self.name, self.age))
 
 
-human2 = HumanExtended(age=56, name='John')
+human2 = HumanExtended(age=56, name="John")
 human2.say_hello()
 
 

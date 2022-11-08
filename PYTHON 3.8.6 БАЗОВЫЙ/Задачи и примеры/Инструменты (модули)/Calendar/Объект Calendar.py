@@ -15,7 +15,7 @@ month = c.itermonthdays(2020, 7)
 # и используют их по своему усмотрению.
 i = 1
 for day in month:
-    print("%3d" % day, end='')
+    print("%3d" % day, end="")
     if i % 7 == 0:
         print()
     i += 1

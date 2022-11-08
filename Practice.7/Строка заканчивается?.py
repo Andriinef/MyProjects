@@ -6,11 +6,11 @@ from codewars_test import assert_equals
 
 
 def solution(string, ending):
-    return string[-len(ending):] == ending or '' == ending
+    return string[-len(ending) :] == ending or "" == ending
     # return ending in string[-len(ending):]
     # return string.endswith(ending)
 
 
-test0 = assert_equals(solution('abcde', 'cde'), True)
-test1 = assert_equals(solution('abcde', 'abc'), False)
-test2 = assert_equals(solution('abcde', ''), True)
+test0 = assert_equals(solution("abcde", "cde"), True)
+test1 = assert_equals(solution("abcde", "abc"), False)
+test2 = assert_equals(solution("abcde", ""), True)

@@ -4,11 +4,11 @@ class Base:
 
     def print_a(self, square=False, multiplier=None):
         if square and not multiplier:
-            print(self.__a ** 2)
+            print(self.__a**2)
         elif not square and multiplier:
             print(self.__a * multiplier)
         elif square and multiplier:
-            print((self.__a ** 2) * multiplier)
+            print((self.__a**2) * multiplier)
         else:
             print(self.__a)
 

@@ -9,8 +9,7 @@ string = input("Write down a text:\n")
 
 # Знаки препинания,
 # которые могут содержаться в тексте.
-signs = ['.', ',', ':', ';',
-         '!', '?', '(', ')']
+signs = [".", ",", ":", ";", "!", "?", "(", ")"]
 
 # Метод split() без аргументов
 # разделяет строку по символам пробела.
@@ -54,7 +53,7 @@ for word in words:
     i += 1
 
 for i in words:
-    print(i, end=' ')
+    print(i, end=" ")
 print()
 
 # Write down a text:

@@ -1,8 +1,7 @@
 import controls
 import pygame
-from pygame.sprite import Group
-
 from gun import Gun
+from pygame.sprite import Group
 from scores import Scores
 from stats import Stats
 

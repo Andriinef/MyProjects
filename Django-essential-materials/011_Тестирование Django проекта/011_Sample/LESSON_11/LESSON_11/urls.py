@@ -14,19 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from django.views.decorators.csrf import csrf_exempt
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from graphene_django.views import GraphQLView
-from rest_framework import permissions
-
 from LESSON_11.schema import scheme
+from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
         title="LESSON 11",
-        default_version='v1',
+        default_version="v1",
         description="Test description",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="mikolaz2727@gmail.com"),
@@ -37,11 +36,9 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/docs/',
-         schema_view.with_ui(cache_timeout=0), name='schema-json'),
-    path("graphql/",
-         csrf_exempt(GraphQLView.as_view(graphiql=True, schema=scheme))),
-    path('api-auth/', include('rest_framework.urls')),
-    path('', include('rest_api.urls'))
+    path("admin/", admin.site.urls),
+    path("api/docs/", schema_view.with_ui(cache_timeout=0), name="schema-json"),
+    path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=scheme))),
+    path("api-auth/", include("rest_framework.urls")),
+    path("", include("rest_api.urls")),
 ]

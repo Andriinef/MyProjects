@@ -7,7 +7,7 @@ import os
 # генерирующий экземпляры класса DirEntry.
 # Каждый DirEntry соответствует
 # вложенному в указанный каталог элементу.
-snap = os.scandir('/home/pl/snap')
+snap = os.scandir("/home/pl/snap")
 print(snap)
 
 # Экземпляры DirEntry имеют свойства и методы,

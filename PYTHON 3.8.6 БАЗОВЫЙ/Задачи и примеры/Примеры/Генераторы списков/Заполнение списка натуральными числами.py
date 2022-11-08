@@ -9,7 +9,7 @@ n = int(input())
 # На каждой итерации цикла
 # 'for i in range(n)' переменной i
 # присваивается число от 0 до n.
-lst = [(i+1) for i in range(n)]
+lst = [(i + 1) for i in range(n)]
 
 # равносильно следующему:
 # lst = []

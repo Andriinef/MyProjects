@@ -1,8 +1,7 @@
-
 import unittest
 
-import test_api
 import models
+import test_api
 
 
 class Test(unittest.TestCase):
@@ -18,5 +17,5 @@ class Test(unittest.TestCase):
         self.assertEqual(xrate.rate, 1.01)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

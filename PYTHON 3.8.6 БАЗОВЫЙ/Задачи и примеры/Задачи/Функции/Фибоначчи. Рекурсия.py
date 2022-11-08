@@ -19,7 +19,7 @@ def fibonacci(n):
     # Каждый из этих вызовов вернёт 1.
     # Значит fibonacci(3) вернёт 2.
     # Значит, fibonacci(4) будет равно 2 + 1 = 3.
-    return fibonacci(n-1) + fibonacci(n-2)
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 m = int(input())

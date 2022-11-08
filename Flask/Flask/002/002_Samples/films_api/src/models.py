@@ -13,7 +13,9 @@ class Film(db.Model):
     length = db.Column(db.Float)
     rating = db.Column(db.Float)
 
-    def __init__(self, title, release_date, description, distributed_by, length, rating):
+    def __init__(
+        self, title, release_date, description, distributed_by, length, rating
+    ):
         self.title = title
         self.release_date = release_date
         self.uuid = str(uuid.uuid4())
@@ -23,15 +25,15 @@ class Film(db.Model):
         self.rating = rating
 
     def __repr__(self):
-        return f'Film({self.title}, {self.release_date}, {self.uuid}, {self.distributed_by})'
+        return f"Film({self.title}, {self.release_date}, {self.uuid}, {self.distributed_by})"
 
     def to_dict(self):
         return {
-            'title': self.title,
-            'uuid': self.uuid,
-            'release_date': self.release_date.strftime('%Y-%m-%d'),
-            'distributed_by': self.distributed_by,
-            'description': self.description,
-            'length': self.length,
-            'rating': self.rating,
+            "title": self.title,
+            "uuid": self.uuid,
+            "release_date": self.release_date.strftime("%Y-%m-%d"),
+            "distributed_by": self.distributed_by,
+            "description": self.description,
+            "length": self.length,
+            "rating": self.rating,
         }

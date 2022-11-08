@@ -7,8 +7,8 @@ import datetime
 # содержащий текущую локальную дату.
 today = datetime.date.today()
 # Создаём два других объекта типа date.
-past = datetime.date(2022, 2, 24)   # прошлое
-future = datetime.date(2022, 9, 1)     # будущее
+past = datetime.date(2022, 2, 24)  # прошлое
+future = datetime.date(2022, 9, 1)  # будущее
 
 print(today)
 print(past)

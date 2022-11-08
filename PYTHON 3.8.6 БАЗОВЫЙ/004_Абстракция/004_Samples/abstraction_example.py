@@ -1,9 +1,6 @@
 class Core:
     def __init__(self):
-        self._types = {
-            "A": 100,
-            "B": 300
-        }
+        self._types = {"A": 100, "B": 300}
 
     def get_salary(self, class_name):
         return self._types.get(class_name, 0)

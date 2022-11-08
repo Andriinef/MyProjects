@@ -26,27 +26,22 @@ def fetch3(url):
 
     def callback(f):
         result = f.result().body
-        print('Done: ', future.done())
+        print("Done: ", future.done())
         future.set_result(result)
-        print('Done: ', future.done())
+        print("Done: ", future.done())
 
     fetch_future.add_done_callback(callback)
-    return (
-        yield future
-    )
+    return (yield future)
 
 
 # выполнение нескольких запросов в цикле for
 @gen.coroutine
 def fetch4(url):
     http_client = AsyncHTTPClient()
-    responses = [
-        http_client.fetch(url),
-        http_client.fetch(url)
-    ]
+    responses = [http_client.fetch(url), http_client.fetch(url)]
     results = []
     for i in (yield responses):
-        print('-', i.body)
+        print("-", i.body)
         results.append(i.body)
     return results
 
@@ -54,14 +49,14 @@ def fetch4(url):
 @gen.coroutine
 def run_tasks():
     tasks = [
-        fetch1('http://example.com'),
-        fetch2('http://example.com'),
-        fetch3('http://example.com'),
-        fetch4('http://example.com'),
+        fetch1("http://example.com"),
+        fetch2("http://example.com"),
+        fetch3("http://example.com"),
+        fetch4("http://example.com"),
     ]
     for r in (yield gen.multi(tasks)):
         print(r)
-    print('done')
+    print("done")
 
 
 IOLoop.current().run_sync(run_tasks)

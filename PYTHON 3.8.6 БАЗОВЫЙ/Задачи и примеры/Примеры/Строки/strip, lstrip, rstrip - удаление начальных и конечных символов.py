@@ -1,30 +1,30 @@
 """ strip, lstrip, rstrip - удаление начальных
     и конечных символов
 """
-a = '  hello \n'
+a = "  hello \n"
 # Возвращает копию строки,
 # у которой удаляются первые
 # и последние символы.
 # По умолчанию удаляются
 # пробельные символы.
-print(a.strip() + '!')
+print(a.strip() + "!")
 
-b = '[2, 3, 4]'
+b = "[2, 3, 4]"
 # В качестве аргумента можно
 # передать строку, представляющую
 # набор символов, которые
 # должны быть удалены.
-print(b.strip('[]'))
+print(b.strip("[]"))
 
-c = 'www.younglinux.info'
-print(c.strip('w.'))
+c = "www.younglinux.info"
+print(c.strip("w."))
 
 # lstrip - удаление только
 # символов в начале.
-print(b.lstrip('[]'))
+print(b.lstrip("[]"))
 # rstrip - удаление только
 # символов в конце.
-print(a.rstrip() + '!')
+print(a.rstrip() + "!")
 # hello!
 # 2, 3, 4
 # younglinux.info

@@ -4,7 +4,7 @@ import time
 
 def producer():
     time.sleep(10)
-    print('Product found!')
+    print("Product found!")
     # устанавливаем событий
     product.set()
     # очищаем событие
@@ -12,11 +12,11 @@ def producer():
 
 
 def consumer():
-    print('product wait')
+    print("product wait")
     # ожидаем события ровно столько, пока не вызовется product.set в любом из
     # потоков
     product.wait()
-    print('Product exists!')
+    print("Product exists!")
 
 
 # создаем событие, которое будем использовать в потока- ожидать и устанавливать

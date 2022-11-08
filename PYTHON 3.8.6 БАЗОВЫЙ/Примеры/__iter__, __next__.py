@@ -16,7 +16,6 @@ class FRange:
             raise StopIteration
 
 
-
 class FRange2D:
     def __init__(self, start=0.0, stop=0.0, step=1.0, rows=5):
         self.rows = rows
@@ -39,4 +38,3 @@ for row in fr:
     for x in row:
         print(x, end=" ")
     print()
-

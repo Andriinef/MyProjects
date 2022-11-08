@@ -30,7 +30,7 @@ for i in range(N):
     row = []
     for j in range(N):
         row.append(randint(1, 99))
-        print("%4d" % row[j], end='')
+        print("%4d" % row[j], end="")
     matrix.append(row)
     print()
 
@@ -46,8 +46,7 @@ print()
 # обмениваются своими значениями.
 # 'N-1' - индекс последнего элемента.
 for i in range(N):
-    matrix[i][i], matrix[i][N - 1 - i] = \
-        matrix[i][N - 1 - i], matrix[i][i]
+    matrix[i][i], matrix[i][N - 1 - i] = matrix[i][N - 1 - i], matrix[i][i]
     # добавив j, развернется вся матрица
     # matrix[i][j], matrix[i][N - 1 - j] = \
     #     matrix[i][N - 1 - j], matrix[i][j]
@@ -55,7 +54,7 @@ for i in range(N):
 # вывод матрицы на экран
 for i in matrix:
     for j in i:
-        print("%4d" % j, end='')
+        print("%4d" % j, end="")
     print()
 # 37  57   1  26  71
 # 38  83  74  46  90

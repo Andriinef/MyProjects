@@ -1,13 +1,14 @@
 import asyncio
 import time
+
 import aiohttp
 import requests
 
 resources = [
-    'https://jsonplaceholder.typicode.com/todos/1',
-    'http://example.com',
-    'https://github.com',
-    'https://jsonplaceholder.typicode.com/posts/1',
+    "https://jsonplaceholder.typicode.com/todos/1",
+    "http://example.com",
+    "https://github.com",
+    "https://jsonplaceholder.typicode.com/posts/1",
 ]
 
 
@@ -15,7 +16,7 @@ async def fetch_url(url):
     """
     Асинзронный HTTP-клиент для выполнения запросов к серверу.
     """
-    async with aiohttp.request('get', url) as request:
+    async with aiohttp.request("get", url) as request:
         return url, await request.text()
 
 
@@ -24,15 +25,12 @@ async def async_main():
     Асинхронная корутина для выполнения запросов, она генерирует список корутин
     и выоплняет fetch_url.
     """
-    tasks = [
-        asyncio.ensure_future(fetch_url(url))
-        for url in resources
-    ]
+    tasks = [asyncio.ensure_future(fetch_url(url)) for url in resources]
     started = time.time()
     for future in asyncio.as_completed(tasks):
         url, _ = await future
         print(url)
-    print('Async spent time: {:.2f}'.format(time.time() - started))
+    print("Async spent time: {:.2f}".format(time.time() - started))
 
 
 def sync_main():
@@ -45,7 +43,7 @@ def sync_main():
     for url in resources:
         requests.get(url)
         print(url)
-    print('Sync spent time:  {:.2f}'.format(time.time() - started))
+    print("Sync spent time:  {:.2f}".format(time.time() - started))
 
 
 sync_main()

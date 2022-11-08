@@ -5,7 +5,9 @@ from codewars_test import assert_equals
 
 
 def add_binary(a, b):
-    return bin(a + b).replace('0b', '')  # метод string.replace(old value, new value, count)
+    return bin(a + b).replace(
+        "0b", ""
+    )  # метод string.replace(old value, new value, count)
     # заменяет указанную фразу другой указанной фразой
 
     # return bin(a+b)[2:]

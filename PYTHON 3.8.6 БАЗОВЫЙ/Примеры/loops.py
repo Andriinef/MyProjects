@@ -5,5 +5,3 @@ class Test:
 
 
 t = Test()
-
-

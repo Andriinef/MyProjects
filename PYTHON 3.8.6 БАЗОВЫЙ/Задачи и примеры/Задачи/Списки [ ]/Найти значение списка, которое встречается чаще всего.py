@@ -11,7 +11,7 @@ from random import random
 # Количество элементов в списке = 15.
 # Для заполнения используется
 # генератор списков.
-a = [int(random()*5) for i in range(15)]
+a = [int(random() * 5) for i in range(15)]
 print(a)
 
 # Из списка создаётся множество.

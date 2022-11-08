@@ -1,6 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django.db import models
 from graph_app.managers import UserManager
 
 
@@ -8,7 +7,7 @@ class ApiClient(AbstractUser):
     username = None
     email = models.EmailField("email address", unique=True)
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
     objects = UserManager()
@@ -41,13 +40,9 @@ class Model(models.Model):
 class Car(models.Model):
     license_plate = models.CharField(unique=True, max_length=10)
     notes = models.TextField()
-    make = models.ForeignKey(
-        Make, related_name="car_make", on_delete=models.CASCADE
-    )
+    make = models.ForeignKey(Make, related_name="car_make", on_delete=models.CASCADE)
 
-    model = models.ForeignKey(
-        Model, related_name="car_model", on_delete=models.CASCADE
-    )
+    model = models.ForeignKey(Model, related_name="car_model", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.license_plate}_{self.make.name}_{self.model.name}"

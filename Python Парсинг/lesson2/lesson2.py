@@ -2,18 +2,19 @@
 # Author: pythontoday
 # YouTube: https://www.youtube.com/c/PythonToday/videos
 
+import csv
+import json
 import random
 from time import sleep
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import csv
 
 # url = "https://health-diet.ru/table_calorie/?utm_source=leftMenu&utm_medium=table_calorie"
 #
 headers = {
     "Accept": "*/*",
-    "User-Agent": "Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1"
+    "User-Agent": "Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1",
 }
 #
 # req = requests.get(url, headers=headers)
@@ -79,15 +80,7 @@ for category_name, category_href in all_categories.items():
 
     with open(f"data/{count}_{category_name}.csv", "w", encoding="utf-8") as file:
         writer = csv.writer(file)
-        writer.writerow(
-            (
-                product,
-                calories,
-                proteins,
-                fats,
-                carbohydrates
-            )
-        )
+        writer.writerow((product, calories, proteins, fats, carbohydrates))
 
     # собираем данные продуктов
     products_data = soup.find(class_="mzr-tc-group-table").find("tbody").find_all("tr")
@@ -108,21 +101,13 @@ for category_name, category_href in all_categories.items():
                 "Calories": calories,
                 "Proteins": proteins,
                 "Fats": fats,
-                "Carbohydrates": carbohydrates
+                "Carbohydrates": carbohydrates,
             }
         )
 
         with open(f"data/{count}_{category_name}.csv", "a", encoding="utf-8") as file:
             writer = csv.writer(file)
-            writer.writerow(
-                (
-                    title,
-                    calories,
-                    proteins,
-                    fats,
-                    carbohydrates
-                )
-            )
+            writer.writerow((title, calories, proteins, fats, carbohydrates))
     with open(f"data/{count}_{category_name}.json", "a", encoding="utf-8") as file:
         json.dump(product_info, file, indent=4, ensure_ascii=False)
 

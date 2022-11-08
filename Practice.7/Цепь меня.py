@@ -10,12 +10,15 @@ def chain(init_val, functions):
         return chain(function(init_val), functions[1:])  # рекусия
     return init_val
 
-
     # return chain(functions[0](init_val),functions[1:]) if functions else init_val
 
 
-def add10(x): return x + 10
-def mul30(x): return x * 30
+def add10(x):
+    return x + 10
+
+
+def mul30(x):
+    return x * 30
 
 
 test0 = assert_equals(chain(42, []), 42)

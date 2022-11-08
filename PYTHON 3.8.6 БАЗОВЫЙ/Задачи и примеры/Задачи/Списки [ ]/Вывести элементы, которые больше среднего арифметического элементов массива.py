@@ -18,7 +18,7 @@ suma = 0
 
 for i in range(N):
     a.append(randint(0, 9))
-    print(a[i], end=' ')
+    print(a[i], end=" ")
 
     # Добавляем значение
     # элемента к общей сумме.
@@ -36,5 +36,5 @@ for i in a:
     # Если текущий элемент больше среднего,
     # то выводим элемент на экран.
     if i > average:
-        print(i, end=' ')
+        print(i, end=" ")
 print()

@@ -6,6 +6,7 @@ def values(n, current=1):
 
 # values(20)
 
+
 def check_pow_2(n):
     if n == 1:
         print("YES")
@@ -17,6 +18,7 @@ def check_pow_2(n):
 
 
 # check_pow_2(16)
+
 
 def sum_val(num, res=0):
     if not num:

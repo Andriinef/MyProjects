@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 
 import requests
-
 from api import _Api
 
 
@@ -30,7 +29,7 @@ class Api(_Api):
         currency_cbr_alias = cbr_valute_map[from_currency]
 
         for valute in valutes:
-            if valute.find('CharCode').text == currency_cbr_alias:
+            if valute.find("CharCode").text == currency_cbr_alias:
                 return float(valute.find("Value").text.replace(",", "."))
 
         raise ValueError("Invalid Cbr response: %s not found" % from_currency)

@@ -4,8 +4,7 @@
 """
 
 # исходная строка
-string = "python java c c++ " \
-         "javascript pascal php"
+string = "python java c c++ " "javascript pascal php"
 print(string)
 
 # Преобразование строки в список слов,

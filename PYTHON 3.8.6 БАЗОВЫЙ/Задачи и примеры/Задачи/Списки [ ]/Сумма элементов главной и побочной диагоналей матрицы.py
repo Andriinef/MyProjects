@@ -12,7 +12,7 @@ matrix = []
 for i in range(N):
     row = []
     for j in range(N):
-        row.append(int(random()*10))
+        row.append(int(random() * 10))
     matrix.append(row)
 
 # вывод матрицы на экран

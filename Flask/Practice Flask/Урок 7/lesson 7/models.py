@@ -1,7 +1,7 @@
-from peewee import (SqliteDatabase, Model, IntegerField, DoubleField, DateTimeField, datetime as peewee_datetime,
-                    CharField, TextField)
-
 from config import DB_NAME
+from peewee import (CharField, DateTimeField, DoubleField, IntegerField, Model,
+                    SqliteDatabase, TextField)
+from peewee import datetime as peewee_datetime
 
 db = SqliteDatabase(DB_NAME)
 
@@ -14,9 +14,7 @@ class _Model(Model):
 class XRate(_Model):
     class Meta:
         db_table = "xrates"
-        indexes = (
-            (("from_currency", "to_currency"), True),
-        )
+        indexes = ((("from_currency", "to_currency"), True),)
 
     from_currency = IntegerField()
     to_currency = IntegerField()

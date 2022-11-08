@@ -21,7 +21,7 @@ seq1 = range(10)
 seq2 = range(10, 20)
 result = concat_sequence_v1(seq1, seq2)
 
-print('Seq 1')
+print("Seq 1")
 for i in result:
     print(i)
 
@@ -29,6 +29,6 @@ seq1 = range(10)
 seq2 = range(10, 20)
 result = concat_sequence_v2(seq1, seq2)
 
-print('Seq 2')
+print("Seq 2")
 for i in result:
     print(i)

@@ -5,7 +5,7 @@ import time
 def producer():
     with lock:
         # выведем сколько раз можно будет взять семафор: это внутренний счетчик
-        print('Set locking', lock._value)
+        print("Set locking", lock._value)
         time.sleep(3)
         print("I'm free")
 

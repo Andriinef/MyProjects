@@ -1,7 +1,7 @@
 text = "hello world"
 print(text)
 print(type(text))
-b_text = text.encode(encoding='utf-8')
+b_text = text.encode(encoding="utf-8")
 print(b_text)
 print(type(b_text))
 

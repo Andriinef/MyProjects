@@ -25,6 +25,6 @@ while n1 > 0:
     # добавляем очередную цифру
     n2 = n2 + digit
 
-print('Inverse number:', n2)
+print("Inverse number:", n2)
 # An integer: 1023
 # Inverse number: 3201

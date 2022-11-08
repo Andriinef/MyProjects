@@ -1,6 +1,5 @@
-
-from app import app
 import controllers
+from app import app
 
 
 @app.route("/")

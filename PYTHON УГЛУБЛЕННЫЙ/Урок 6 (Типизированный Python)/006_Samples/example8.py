@@ -1,4 +1,4 @@
-from typing import Union, Tuple, Iterable
+from typing import Iterable, Tuple, Union
 
 
 def handler1(name: str, coefficient: Union[float, str]) -> None:

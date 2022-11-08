@@ -20,7 +20,7 @@ last = input("The last: ")
 while first <= last:
 
     # выводим на экран символ
-    print(first, end='')
+    print(first, end="")
 
     # Получаем его числовой код
     # из таблицы символов.

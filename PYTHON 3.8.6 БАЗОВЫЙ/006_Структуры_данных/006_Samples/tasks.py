@@ -1,7 +1,7 @@
 def func(index, count):
     return {
         "ID": index,
-        "values": ["{}_{}".format(index, value) for value in range(count)]
+        "values": ["{}_{}".format(index, value) for value in range(count)],
     }
 
 
@@ -11,5 +11,5 @@ def generate(count):
 
 r = generate(10)
 # print(r)
-f = [value for sublist in r for value in sublist['values']]
+f = [value for sublist in r for value in sublist["values"]]
 print(f)

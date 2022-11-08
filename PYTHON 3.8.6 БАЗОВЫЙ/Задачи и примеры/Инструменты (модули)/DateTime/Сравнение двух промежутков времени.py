@@ -19,7 +19,7 @@ print(delta12)
 print(delta32)
 
 # Промежутки времени можно сравнивать между собой
-print('delta12 > delta32?', delta12 > delta32)
+print("delta12 > delta32?", delta12 > delta32)
 # 2020-04-20
 # 2020-05-05
 # 2020-05-21

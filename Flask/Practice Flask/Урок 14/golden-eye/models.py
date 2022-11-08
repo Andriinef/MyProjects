@@ -1,15 +1,20 @@
 import os
 import urllib.parse
 
-from peewee import (SqliteDatabase, Model, IntegerField, DoubleField, DateTimeField, datetime as peewee_datetime,
-                    CharField, TextField, PostgresqlDatabase)
-
 import config
+from peewee import (CharField, DateTimeField, DoubleField, IntegerField, Model,
+                    PostgresqlDatabase, SqliteDatabase, TextField)
+from peewee import datetime as peewee_datetime
 
 if os.environ.get("DATABASE_URL"):
     url = urllib.parse.urlparse(os.environ.get("DATABASE_URL"))
-    db = PostgresqlDatabase(host=url.hostname, user=url.username, password=url.password, port=url.port,
-                            database=url.path[1:])
+    db = PostgresqlDatabase(
+        host=url.hostname,
+        user=url.username,
+        password=url.password,
+        port=url.port,
+        database=url.path[1:],
+    )
 else:
     db = SqliteDatabase(config.DB_NAME)
 
@@ -25,9 +30,7 @@ class _Model(Model):
 class XRate(_Model):
     class Meta:
         db_table = "xrates"
-        indexes = (
-            (("from_currency", "to_currency"), True),
-        )
+        indexes = ((("from_currency", "to_currency"), True),)
 
     from_currency = IntegerField()
     to_currency = IntegerField()
@@ -71,8 +74,12 @@ def start_db():
         XRate.create(from_currency=840, to_currency=980, rate=1, module="privat_api")
         XRate.create(from_currency=840, to_currency=643, rate=1, module="cbr_api")
         XRate.create(from_currency=1000, to_currency=840, rate=1, module="privat_api")
-        XRate.create(from_currency=1000, to_currency=980, rate=1, module="cryptonator_api")
-        XRate.create(from_currency=1000, to_currency=643, rate=1, module="cryptonator_api")
+        XRate.create(
+            from_currency=1000, to_currency=980, rate=1, module="cryptonator_api"
+        )
+        XRate.create(
+            from_currency=1000, to_currency=643, rate=1, module="cryptonator_api"
+        )
 
         for m in (ApiLog, ErrorLog):
             m.create_table()

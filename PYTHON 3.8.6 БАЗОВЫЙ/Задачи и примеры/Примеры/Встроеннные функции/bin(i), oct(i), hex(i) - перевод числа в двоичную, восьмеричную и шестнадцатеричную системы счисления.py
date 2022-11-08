@@ -10,15 +10,15 @@ print(oct(30))
 print(hex(30))
 
 # Один из способов избавиться от префиксов
-print(format(30, 'b'))
-print(format(30, 'o'))
-print(format(30, 'x'))
-print(format(30, 'X'))
+print(format(30, "b"))
+print(format(30, "o"))
+print(format(30, "x"))
+print(format(30, "X"))
 # Один из способов перевода в bin,
 # удаление префикса, добавдение нулей
 # и перевода в int([object], [основание системы счисления])
 a = bin(a)
-a = b.lstrip('0b')
+a = b.lstrip("0b")
 a = a.zfill(6)
 a = int(a, 2)
 

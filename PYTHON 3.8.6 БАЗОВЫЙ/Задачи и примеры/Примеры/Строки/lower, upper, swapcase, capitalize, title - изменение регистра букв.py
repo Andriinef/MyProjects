@@ -1,7 +1,7 @@
 """ lower, upper, swapcase, capitalize,
     title - изменение регистра букв
 """
-a = 'HELLO world'
+a = "HELLO world"
 print(a, "- origin")
 # буквы приводятся к нижнему регистру
 print(a.lower(), "- lower")

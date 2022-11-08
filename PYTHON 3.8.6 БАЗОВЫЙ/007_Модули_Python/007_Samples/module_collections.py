@@ -7,9 +7,9 @@ print(counts)
 dict_of_lists = collections.defaultdict(list)
 for value in range(1, 11):
     if value % 2 == 0:
-        dict_of_lists['even'].append(value)
+        dict_of_lists["even"].append(value)
     else:
-        dict_of_lists['odd'].append(value)
+        dict_of_lists["odd"].append(value)
 print(dict(dict_of_lists))
 
 counts = collections.defaultdict(int)

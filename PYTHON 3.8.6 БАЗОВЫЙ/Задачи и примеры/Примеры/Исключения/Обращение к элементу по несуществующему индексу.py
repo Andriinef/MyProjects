@@ -7,7 +7,7 @@ print("s - stop")
 while True:
     # запрашиваем индекс элемента
     ind_x = input("ID: ")
-    if ind_x == 's':
+    if ind_x == "s":
         break
 
     try:

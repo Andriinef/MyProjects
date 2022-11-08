@@ -18,7 +18,7 @@ class Point:
             return object.__getattribute__(self, item)
 
     def __setattr__(self, key, value):
-        if key == 'z':
+        if key == "z":
             raise AttributeError("Error2...")
         else:
             object.__setattr__(self, key, value)
@@ -30,6 +30,7 @@ class Point:
     def __delattr__(self, item):
         print("__delattr__" + item)
         object.__delattr__(self, item)
+
 
 pt1 = Point(1, 2)
 pt2 = Point(200, 20)

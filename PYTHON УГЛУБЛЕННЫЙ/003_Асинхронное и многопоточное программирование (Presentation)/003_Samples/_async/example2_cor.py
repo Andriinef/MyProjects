@@ -28,6 +28,7 @@ def coroutine(func):
     Декоратор для автоматического запуска корутины, чтобы не выполнять
     cor.send(None).
     """
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         res = func(*args, **kwargs)

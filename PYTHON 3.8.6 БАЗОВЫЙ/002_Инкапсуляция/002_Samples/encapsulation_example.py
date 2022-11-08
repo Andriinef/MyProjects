@@ -15,6 +15,7 @@ class User:
 # user.name = 'Bob'
 # print(user.name)
 
+
 class User2:
     def __init__(self, name):
         self.__name = name
@@ -25,17 +26,13 @@ class User2:
         return self.__name
 
 
-u2 = User2(name='Mike')
+u2 = User2(name="Mike")
 print(u2.name)
 
 
 class Worker:
     RIGHTS = "Equal"
-    SALARY_MAP = {
-        "A": 100,
-        "B": 200,
-        "C": 500
-    }
+    SALARY_MAP = {"A": 100, "B": 200, "C": 500}
 
     def __init__(self, working_class):
         self.__salary = self.__get_salary(working_class)
@@ -49,8 +46,8 @@ class Worker:
         return self.__salary
 
 
-w1 = Worker('A')
+w1 = Worker("A")
 print(w1.salary)
 
-w2 = Worker('D')
+w2 = Worker("D")
 print(w2.salary)

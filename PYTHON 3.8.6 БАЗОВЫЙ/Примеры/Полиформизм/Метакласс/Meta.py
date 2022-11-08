@@ -9,9 +9,9 @@ class Meta(type):
 
 
 class Women(metaclass=Meta):
-    title = 'title'
-    content = 'content'
-    photo = 'photo'
+    title = "title"
+    content = "content"
+    photo = "photo"
 
 
 w = Women()

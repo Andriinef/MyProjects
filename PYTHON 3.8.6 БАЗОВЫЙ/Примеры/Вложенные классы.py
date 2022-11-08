@@ -1,21 +1,21 @@
 class Women:
-    title = 'object title'
-    photo = 'object photo'
-    ordering = 'object ordering'
+    title = "object title"
+    photo = "object photo"
+    ordering = "object ordering"
 
     def __init__(self, user, psw):
         self.user = user
         self.psw = psw
-        self.meta = self.Meta(user + '@' + psw)
+        self.meta = self.Meta(user + "@" + psw)
 
     class Meta:
-        object = ['id']
+        object = ["id"]
 
         def __init__(self, access):
             self.access = access
 
 
-w = Women('root', '12345')
+w = Women("root", "12345")
 print(w.ordering)
 print(w.Meta.object)
 print(w.__dict__)

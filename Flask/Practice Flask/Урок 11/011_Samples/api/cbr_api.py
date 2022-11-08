@@ -12,7 +12,10 @@ class Api(_Api):
         return rate
 
     def _get_cbr_rate(self, from_currency):
-        response = self._send_request(url="https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json", method="get")
+        response = self._send_request(
+            url="https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json",
+            method="get",
+        )
         self.log.debug("response.encoding: %s" % response.encoding)
         response_text = response.text
         self.log.debug("response.text: %s" % response_text)
@@ -28,7 +31,7 @@ class Api(_Api):
         currency_cbr_alias = cbr_valute_map[from_currency]
 
         for valute in valutes:
-            if valute.find('CharCode').text == currency_cbr_alias:
+            if valute.find("CharCode").text == currency_cbr_alias:
                 return float(valute.find("Value").text.replace(",", "."))
 
         raise ValueError("Invalid Cbr response: %s not found" % from_currency)

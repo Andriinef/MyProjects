@@ -15,7 +15,7 @@ b = reversed(a)
 print(b)
 # Помещаем элементы в список,
 # затем объединяем их в строку.
-print(''.join(list(b)))
+print("".join(list(b)))
 
 a = range(5)
 b = reversed(a)

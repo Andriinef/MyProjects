@@ -1,13 +1,13 @@
 import datetime
 import json
-import requests
 
+import requests
 
 headers = {
     "Accept": "application/json, text/javascript, */*; q=0.01",
     "X-Is-Ajax-Request": "X-Is-Ajax-Request",
     "X-Requested-With": "XMLHttpRequest",
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36",
 }
 
 
@@ -60,7 +60,7 @@ def get_data():
                                 {
                                     "store_name": store_name,
                                     "store_price": store_price,
-                                    "store_amount": store_amount
+                                    "store_amount": store_amount,
                                 }
                             )
 
@@ -71,7 +71,7 @@ def get_data():
                     "url": item_url,
                     "img_url": item_img,
                     "stores": stores,
-                    "total_amount": total_amount
+                    "total_amount": total_amount,
                 }
             )
 
@@ -90,5 +90,5 @@ def main():
     get_data()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

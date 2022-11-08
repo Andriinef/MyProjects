@@ -3,7 +3,7 @@ import socket
 
 # IP UDP-сокет сервер
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.bind(('127.0.0.1', 8888))
+sock.bind(("127.0.0.1", 8888))
 
 # бесконечный цикл для постоянного чтения данных, без остановки сервера
 while True:
@@ -13,4 +13,4 @@ while True:
         sock.close()
         break
     else:
-        print('Message', result.decode('utf-8'))
+        print("Message", result.decode("utf-8"))

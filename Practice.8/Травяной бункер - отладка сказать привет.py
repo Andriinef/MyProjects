@@ -7,4 +7,4 @@ def say_hello(name):
     # return "Hello, " + name
 
 
-test = assert_equals(say_hello('Mr. Spock'), 'Hello, Mr. Spock')
+test = assert_equals(say_hello("Mr. Spock"), "Hello, Mr. Spock")

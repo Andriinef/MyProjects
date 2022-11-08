@@ -1,6 +1,4 @@
-
-from config import logging, LOGGER_CONFIG
-
+from config import LOGGER_CONFIG, logging
 from models import XRate, peewee_datetime
 
 fh = logging.FileHandler(LOGGER_CONFIG["file"])
@@ -16,8 +14,13 @@ class _Api:
 
     def update_rate(self, from_currency, to_currency):
         self.log.info("Started update for: %s=>%s" % (from_currency, to_currency))
-        xrate = XRate.select().where(XRate.from_currency == from_currency,
-                                     XRate.to_currency == to_currency).first()
+        xrate = (
+            XRate.select()
+            .where(
+                XRate.from_currency == from_currency, XRate.to_currency == to_currency
+            )
+            .first()
+        )
 
         self.log.debug("rate before: %s", xrate)
         xrate.rate = self._update_rate(xrate)

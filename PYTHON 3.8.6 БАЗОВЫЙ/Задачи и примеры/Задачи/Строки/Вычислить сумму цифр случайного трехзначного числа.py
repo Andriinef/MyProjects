@@ -20,4 +20,4 @@ b = int(s[1])
 c = int(s[2])
 
 # вычисляется сумма цифр
-print(a+b+c)
+print(a + b + c)

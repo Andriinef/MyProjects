@@ -5,7 +5,7 @@ async def async_worker(number, divider):
     """
     вместо yield/yield from используем синтаксис async/await.
     """
-    print('Worker {} started'.format(number))
+    print("Worker {} started".format(number))
     await asyncio.sleep(2)
     print(number / divider)
     return number / divider

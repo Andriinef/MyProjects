@@ -35,4 +35,4 @@ class NoteBoor(Goods, MixinLog, MixinLog2):
 n = NoteBoor("Acer", 1.5, 3000)
 n.print_info()
 n.save_sell_log()
-print(NoteBoor.__mro__)       # Наследование
+print(NoteBoor.__mro__)  # Наследование

@@ -1,6 +1,5 @@
 import requests
 from celery import shared_task
-
 from LESSON_9.celery import app
 
 
@@ -8,14 +7,16 @@ from LESSON_9.celery import app
 def fibon(n):
     a, b = 0, 1
     for _ in range(n):
-        a, b = b, a + b,
+        a, b = (
+            b,
+            a + b,
+        )
     return a
 
 
 @shared_task
 def fetch_weather():
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=5b9dee532cf418833e63baf01e31e197'
-    city = 'Las Vegas'
-    city_weather = requests.get(url.format(
-        city)).json()
-    return city_weather.get('wind')
+    url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=5b9dee532cf418833e63baf01e31e197"
+    city = "Las Vegas"
+    city_weather = requests.get(url.format(city)).json()
+    return city_weather.get("wind")

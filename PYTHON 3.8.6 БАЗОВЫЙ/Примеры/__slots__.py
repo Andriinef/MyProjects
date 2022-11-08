@@ -1,5 +1,5 @@
 class Point:
-    __slots__ = ('x', 'y', 'length')
+    __slots__ = ("x", "y", "length")
 
     def __init__(self, x, y):
         self.x = x

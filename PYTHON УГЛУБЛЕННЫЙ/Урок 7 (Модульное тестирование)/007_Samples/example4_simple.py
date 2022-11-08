@@ -6,11 +6,11 @@ def sum_two_values(a, b):
 
 
 def power(x, n):
-    return x ** n
+    return x**n
 
 
 def concat_values(*args):
-    result = ''
+    result = ""
     for item in args:
         result += str(item)
     return result
@@ -18,12 +18,11 @@ def concat_values(*args):
 
 def desc(x, y):
     if x == 0:
-        raise ValueError('`x` should not be equal 0')
+        raise ValueError("`x` should not be equal 0")
     return y / x
 
 
 class UtilsTestCase(unittest.TestCase):
-
     def test_sum_two_values(self):
         value1 = 10
         value2 = 20
@@ -34,13 +33,13 @@ class UtilsTestCase(unittest.TestCase):
         value = 2
         st = 8
         result = power(value, st)
-        expected_value = value ** st
+        expected_value = value**st
         self.assertEqual(result, expected_value)
 
     def test_concat_values(self):
         values = 1, 2, 3, 4
         result = concat_values(*values)
-        expected_result = '1234'
+        expected_result = "1234"
         self.assertEqual(result, expected_result)
 
     def test_desc(self):

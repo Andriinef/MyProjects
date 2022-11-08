@@ -10,12 +10,12 @@ def remove_char(s):
     # length = len(s)
     # result_string = s[1:length - 1]
     # return result_string
-    return s[1: -1]
+    return s[1:-1]
 
 
-test = assert_equals(remove_char('eloquent'), 'loquen')
-test1 = assert_equals(remove_char('country'), 'ountr')
-test2 = assert_equals(remove_char('person'), 'erso')
-test3 = assert_equals(remove_char('place'), 'lac')
-test4 = assert_equals(remove_char('ok'), '')
-test5 = assert_equals(remove_char('ooopsss'), 'oopss')
+test = assert_equals(remove_char("eloquent"), "loquen")
+test1 = assert_equals(remove_char("country"), "ountr")
+test2 = assert_equals(remove_char("person"), "erso")
+test3 = assert_equals(remove_char("place"), "lac")
+test4 = assert_equals(remove_char("ok"), "")
+test5 = assert_equals(remove_char("ooopsss"), "oopss")

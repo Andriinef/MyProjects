@@ -33,6 +33,13 @@ def number_of_pairs(gloves):
 
 test1 = assert_equals(number_of_pairs(["red", "red"]), 1)
 test2 = assert_equals(number_of_pairs(["red", "green", "blue"]), 0)
-test3 = assert_equals(number_of_pairs(["gray", "black", "purple", "purple", "gray", "black"]), 3)
+test3 = assert_equals(
+    number_of_pairs(["gray", "black", "purple", "purple", "gray", "black"]), 3
+)
 test4 = assert_equals(number_of_pairs([]), 0)
-test5 = assert_equals(number_of_pairs(["red", "green", "blue", "blue", "red", "green", "red", "red", "red"]), 4)
+test5 = assert_equals(
+    number_of_pairs(
+        ["red", "green", "blue", "blue", "red", "green", "red", "red", "red"]
+    ),
+    4,
+)

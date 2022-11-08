@@ -25,7 +25,7 @@ for i in range(5):
     for j in range(5):
         # добавляется случайное число
         # от 0 до 9 включительно
-        row.append(int(random()*10))
+        row.append(int(random() * 10))
     # строка добавляется в матрицу
     matrix.append(row)
 
@@ -59,7 +59,7 @@ for row in matrix:
     i += 1
 
 # вывод индекса и суммы
-print(id_row, '-', max_row)
+print(id_row, "-", max_row)
 
 # Переменная для хранения
 # максимальной суммы столбца.
@@ -90,7 +90,7 @@ for i in range(5):
         id_col = i
 
 # вывод индекса столбца и его суммы
-print(id_col, '-', max_col)
+print(id_col, "-", max_col)
 # [2, 6, 4, 4, 8]
 # [1, 7, 2, 7, 6]
 # [4, 7, 6, 9, 2]

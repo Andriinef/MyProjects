@@ -9,7 +9,7 @@ import time
 tuple_time = (2020, 7, 21, 7, 44, 20, 1, 203, 0)
 print(time.mktime(tuple_time))
 
-print('-------')
+print("-------")
 
 # Получаем struct_time текущего времени по гринвичу.
 gm = time.gmtime()
@@ -17,7 +17,7 @@ print(gm)
 # Преобразуем struct_time в секунды.
 print(time.mktime(gm))
 
-print('-------')
+print("-------")
 
 # Получаем struct_time локального времени
 # в момент начала "эпохи",

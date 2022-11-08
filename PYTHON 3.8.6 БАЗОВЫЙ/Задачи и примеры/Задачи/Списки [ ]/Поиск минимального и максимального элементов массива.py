@@ -17,7 +17,7 @@ a = [0] * N
 # выводим на экран.
 for i in range(N):
     a[i] = randint(0, 100)
-    print(a[i], end=' ')
+    print(a[i], end=" ")
 print()
 
 # Переменная для хранения максимума.

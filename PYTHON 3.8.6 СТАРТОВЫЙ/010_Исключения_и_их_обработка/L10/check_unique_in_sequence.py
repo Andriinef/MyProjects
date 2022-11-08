@@ -8,7 +8,7 @@ def check_sequence_unique(array):
     try:
         return check(array)
     except TypeError as type_error:
-        print(type_error, 'use only strings, lists or sets')
+        print(type_error, "use only strings, lists or sets")
 
 
 s = False

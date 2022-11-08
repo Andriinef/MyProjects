@@ -2,7 +2,7 @@
 import os
 import socket
 
-unix_sock_name = 'unix.sock'
+unix_sock_name = "unix.sock"
 # создаем UNIX UDP-сокет
 sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
 
@@ -21,4 +21,4 @@ while True:
         sock.close()
         break
     else:
-        print('Message', result.decode('utf-8'))
+        print("Message", result.decode("utf-8"))

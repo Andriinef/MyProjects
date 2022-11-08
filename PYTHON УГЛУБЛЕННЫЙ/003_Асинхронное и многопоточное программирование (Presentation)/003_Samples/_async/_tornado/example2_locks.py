@@ -6,17 +6,17 @@ event = Event()
 
 
 async def consumer():
-    print('Waiting for product')
+    print("Waiting for product")
 
     # ожидаем события
     await event.wait()
-    print('Product was found')
+    print("Product was found")
 
     # очистка события, для нового ожидания
     event.clear()
     # ожидание повторного возникновения события
     await event.wait()
-    print('Product was found twice')
+    print("Product was found twice")
 
     return 1
 
@@ -26,14 +26,14 @@ async def producer():
 
     # засыпаем на 5сек
     await gen.sleep(5)
-    print('Set Event')
+    print("Set Event")
 
     # установка события
     event.set()
     # засыпаем на 5сек снова
     await gen.sleep(5)
 
-    print('Set Event')
+    print("Set Event")
     # и снова устанавливаем событие
     event.set()
 
@@ -41,10 +41,7 @@ async def producer():
 
 
 async def runner():
-    results = await gen.multi([
-        producer(),
-        consumer()
-    ])
+    results = await gen.multi([producer(), consumer()])
     print(results)
 
 

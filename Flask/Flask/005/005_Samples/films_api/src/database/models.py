@@ -3,14 +3,14 @@ import uuid
 from src import db
 
 movies_actors = db.Table(
-    'movies_actors',
-    db.Column('actor_id', db.Integer, db.ForeignKey('actors.id'), primary_key=True),
-    db.Column('film_id', db.Integer, db.ForeignKey('films.id'), primary_key=True)
+    "movies_actors",
+    db.Column("actor_id", db.Integer, db.ForeignKey("actors.id"), primary_key=True),
+    db.Column("film_id", db.Integer, db.ForeignKey("films.id"), primary_key=True),
 )
 
 
 class Film(db.Model):
-    __tablename__ = 'films'
+    __tablename__ = "films"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
@@ -20,10 +20,24 @@ class Film(db.Model):
     distributed_by = db.Column(db.String(128), nullable=False)
     length = db.Column(db.Float)
     rating = db.Column(db.Float)
-    actors = db.relationship('Actor', secondary=movies_actors, lazy=True, backref=db.backref('films', lazy=True))
+    actors = db.relationship(
+        "Actor",
+        secondary=movies_actors,
+        lazy=True,
+        backref=db.backref("films", lazy=True),
+    )
     test = db.Column(db.Float)
 
-    def __init__(self, title, release_date, description, distributed_by, length, rating, actors=None):
+    def __init__(
+        self,
+        title,
+        release_date,
+        description,
+        distributed_by,
+        length,
+        rating,
+        actors=None,
+    ):
         self.title = title
         self.release_date = release_date
         self.uuid = str(uuid.uuid4())
@@ -37,11 +51,11 @@ class Film(db.Model):
             self.actors = actors
 
     def __repr__(self):
-        return f'Film({self.title}, {self.release_date}, {self.uuid}, {self.distributed_by}, {self.rating}, {self.actors}'
+        return f"Film({self.title}, {self.release_date}, {self.uuid}, {self.distributed_by}, {self.rating}, {self.actors}"
 
 
 class Actor(db.Model):
-    __tablename__ = 'actors'
+    __tablename__ = "actors"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, nullable=False)
@@ -49,4 +63,4 @@ class Actor(db.Model):
     is_active = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
-        return f'Actor({self.name}, {self.birthday})'
+        return f"Actor({self.name}, {self.birthday})"

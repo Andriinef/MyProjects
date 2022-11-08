@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('db.sqlite3')
+conn = sqlite3.connect("db.sqlite3")
 
 conn.execute('CREATE TABLE "users" (id, first_name, last_name, birthday)')
 conn.execute('SELECT * FROM "users"')
@@ -33,7 +33,7 @@ except sqlite3.OperationalError as e:
     print(e)
 
 # примеры плохой реализации- формаирование / конкатенация
-first_name = 'Dmitry'
+first_name = "Dmitry"
 sql_text = 'SELECT * FROM users WHERE first_name = "%s"' % (first_name,)
 print(sql_text)
 first_name = '"Dmitry"'
@@ -50,5 +50,5 @@ print(sql_text)
 # позиционные параметры
 cursor.execute('SELECT * FROM "users" WHERE id = ?', (10,))
 # именованные параметры
-cursor.execute('SELECT * FROM "users" WHERE id = :id', {'id': 10})
+cursor.execute('SELECT * FROM "users" WHERE id = :id', {"id": 10})
 conn.close()

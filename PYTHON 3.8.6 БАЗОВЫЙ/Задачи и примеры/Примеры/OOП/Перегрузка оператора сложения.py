@@ -9,8 +9,7 @@ class Animal:
     def __add__(self, another):
         # Из полей "родителей" создаётся имя гибрида
         # и присваивается переменной hybrid.
-        hybrid = Animal.__hybrid_name(
-            self.species, another.species)
+        hybrid = Animal.__hybrid_name(self.species, another.species)
         # Создаётся экземпляр Animal.
         # Метод возвращает этот экземпляр.
         return Animal(hybrid)
@@ -25,10 +24,10 @@ class Animal:
     def __hybrid_name(first, second):
         ln = len(first)
         # берем начало первой строки
-        s1 = first[:(ln // 2 + 1)]
+        s1 = first[: (ln // 2 + 1)]
         ln = len(second)
         # берем конец второй строки
-        s2 = second[(ln // 2):]
+        s2 = second[(ln // 2) :]
         # соединяем
         return s1 + s2
 

@@ -17,13 +17,9 @@ def handler(started=0, finished=0):
 results = []
 
 # произведем замеры и сравним скорость двух потоков, против одного
-task1 = threading.Thread(
-    target=handler,
-    kwargs={'finished': 2 ** 12}
-)
+task1 = threading.Thread(target=handler, kwargs={"finished": 2**12})
 task2 = threading.Thread(
-    target=handler,
-    kwargs={'started': 2 ** 12, 'finished': 2 ** 24}
+    target=handler, kwargs={"started": 2**12, "finished": 2**24}
 )  # 0 - 2^24
 
 started_at = time.time()
@@ -34,14 +30,14 @@ task2.start()
 task1.join()
 task2.join()
 
-print('RESULTS 1')
-print('Time: {}'.format(time.time() - started_at))
-print('Value: ', sum(results))
+print("RESULTS 1")
+print("Time: {}".format(time.time() - started_at))
+print("Value: ", sum(results))
 
 # аналогичный тест для одного основного потока выоплнения
 results = []
 started_at = time.time()
-handler(finished=2 ** 24)
-print('RESULTS 2')
-print('Time: {}'.format(time.time() - started_at))
-print('Value: ', sum(results))
+handler(finished=2**24)
+print("RESULTS 2")
+print("Time: {}".format(time.time() - started_at))
+print("Value: ", sum(results))

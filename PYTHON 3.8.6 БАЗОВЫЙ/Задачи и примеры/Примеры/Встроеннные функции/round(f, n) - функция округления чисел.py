@@ -12,14 +12,14 @@ b = 20.7 / 3
 print(a)
 print(b)
 print(pi)
-print('_' * 10)
+print("_" * 10)
 
 # round() без второго аргумента
 # округляет до ближайшего целого
 print(round(a))
 print(round(b))
 print(round(pi))
-print('_' * 10)
+print("_" * 10)
 
 # С помощью второго аргумента
 # указывается количество знаков

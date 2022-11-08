@@ -9,6 +9,7 @@
 # это наименьшее число,
 # которое делится нацело на оба заданных числа.
 
+
 def lcm(a, b):
     # Произведение всегда кратно
     # любому из своих множителей.
@@ -33,9 +34,9 @@ def lcm(a, b):
     return m // (a + b)
 
 
-x = int(input('a='))
-y = int(input('b='))
-print('LCM:', lcm(x, y))
+x = int(input("a="))
+y = int(input("b="))
+print("LCM:", lcm(x, y))
 # a=14
 # b=6
 # LCM: 42

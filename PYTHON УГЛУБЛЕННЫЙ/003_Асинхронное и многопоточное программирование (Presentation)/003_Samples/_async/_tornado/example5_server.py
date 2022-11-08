@@ -2,9 +2,9 @@ import hashlib
 from abc import ABC
 from concurrent.futures import ThreadPoolExecutor
 
+import tornado.gen
 import tornado.ioloop
 import tornado.web
-import tornado.gen
 
 # создаем pool из 5 потоков
 pool = ThreadPoolExecutor(5)
@@ -22,10 +22,7 @@ def sync_highload_task(password):
 @tornado.gen.coroutine
 def make_password(password) -> str:
     # отправляем в отдельный потом и ждем результата
-    hashed_password = yield pool.submit(
-        sync_highload_task,
-        password.encode()
-    )
+    hashed_password = yield pool.submit(sync_highload_task, password.encode())
     return hashed_password
 
 
@@ -40,18 +37,16 @@ class IndexHandler(tornado.web.RequestHandler):
         Отмечаем наш обработчик как корутину, что позволит нам
         использовать yield.
         """
-        value = self.get_query_argument('password', '')
+        value = self.get_query_argument("password", "")
         if value:
             # хэшируем пароль и дожидаемся ответа
             hashed_password = yield make_password(value)
-            self.write('<h1>Hashed password: {}</h1>'.format(
-                hashed_password.decode())
-            )
+            self.write("<h1>Hashed password: {}</h1>".format(hashed_password.decode()))
         self.write(
-            '<form>'
+            "<form>"
             '<input type="text" name="password" placeholder="Password"/>'
             '<input type="submit"/>'
-            '</form>'
+            "</form>"
         )
 
 
@@ -61,17 +56,14 @@ def make_app():
     по любому изменению файла.
     """
     url_handlers = [
-        tornado.web.URLSpec(r'^/$', IndexHandler, name='index'),
+        tornado.web.URLSpec(r"^/$", IndexHandler, name="index"),
     ]
-    return tornado.web.Application(
-        url_handlers,
-        autoreload=True
-    )
+    return tornado.web.Application(url_handlers, autoreload=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = make_app()
     # прослушиваем порт 8888
     app.listen(8888)
-    print('started')
+    print("started")
     tornado.ioloop.IOLoop.current().start()

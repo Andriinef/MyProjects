@@ -16,4 +16,4 @@ def create_new_user(first_name, last_name):
 
 
 # user1 = create_new_user(value, value)       # int
-user2 = create_new_user('Test1', 'Test2')   # str
+user2 = create_new_user("Test1", "Test2")  # str
