@@ -1,44 +1,47 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Human:
-    def __init__(self, age):
-        self.age = age
+    age: int
 
     def say_hello(self):
         print("Hello, I am {}".format(self.age))
 
 
-human = Human(age=35)
-human.say_hello()
-
-
+@dataclass
 class HumanExtended(Human):
-    def __init__(self, age, name):
-        super().__init__(age)
-        self.name = name
+    name: str
+
 
     def say_hello(self):
-        print("Hello, I am {} and I am {}".format(self.name, self.age))
+        print(f"Hello, I am {self.name} and I am {self.age}")
 
 
-human2 = HumanExtended(age=56, name="John")
-human2.say_hello()
+if __name__ == "__main__":
+    # human = Human(age=35)
+    # human.say_hello()
+    Human(35).say_hello()
+    # human2 = HumanExtended(age=56, name="John")
+    # human2.say_hello()
+    HumanExtended(56, "John").say_hello()
 
 
+@dataclass
 class A:
-    def __init__(self):
-        self.a = 10
+    a = 10
 
 
+@dataclass
 class B:
-    def __init__(self):
-        self.b = 5
+    b = 5
 
 
+@dataclass
 class C(A, B):
-    def __init__(self):
-        A.__init__(self)
-        B.__init__(self)
+    pass
 
 
-c = C()
-print(c.a)
-print(c.b)
+if __name__ == "__main__":
+    print(C.a)
+    print(C.b)
