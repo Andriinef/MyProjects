@@ -16,7 +16,7 @@ class Person:
         del self.__old
 
 
-p = Person('Andrii', 20)
-del p.old`
+p = Person("Andrii", 20)
+del p.old
 p.old = 35
 print(p.__dict__)

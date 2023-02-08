@@ -1,17 +1,21 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Base:
-    def __init__(self, a):
-        self.__a = a
+    a: int
 
-    def print_a(self, square=False, multiplier=None):
+    def print_a(self, multiplier=None, square=False):
         if square and not multiplier:
-            print(self.__a**2)
+            print(self.a**2)
         elif not square and multiplier:
-            print(self.__a * multiplier)
+            print(self.a * multiplier)
         elif square and multiplier:
-            print((self.__a**2) * multiplier)
+            print((self.a**2) * multiplier)
         else:
-            print(self.__a)
+            print(self.a)
 
 
-base = Base(4)
-base.print_a()
+if __name__ == "__main__":
+    base = Base(4)
+    base.print_a(square=True)

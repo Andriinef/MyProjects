@@ -7,7 +7,6 @@ from flask.logging import default_handler
 # from logging.handlers import FileHandler
 
 
-
 app = Flask(__name__)
 
 handler = logging.FileHandler("flask_app.log")

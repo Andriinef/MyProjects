@@ -1,19 +1,19 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Multiplier:
-    def __init__(self, a):
-        self._a = a
+    a: int
 
     def print_a(self, x):
-        print(self._a * x)
-
-
-m = Multiplier(5)
-m.print_a(2)
+        print(self.a * x)
 
 
 class Exponent(Multiplier):
     def print_a(self, x):
-        print(self._a**x)
+        print(self.a**x)
 
 
-e = Exponent(4)
-e.print_a(2)
+if __name__ == "__main__":
+    Multiplier(5).print_a(2)
+    Exponent(5).print_a(2)

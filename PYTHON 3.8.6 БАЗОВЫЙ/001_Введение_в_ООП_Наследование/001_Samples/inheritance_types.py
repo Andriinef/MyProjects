@@ -13,7 +13,6 @@ class Human:
 class HumanExtended(Human):
     name: str
 
-
     def say_hello(self):
         print(f"Hello, I am {self.name} and I am {self.age}")
 

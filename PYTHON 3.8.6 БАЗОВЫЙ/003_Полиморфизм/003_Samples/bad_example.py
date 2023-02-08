@@ -16,3 +16,5 @@ class ExtendedMessenger(Messenger):  # Bad example !
             print("2+2=4")
         else:
             print("...")
+
+
